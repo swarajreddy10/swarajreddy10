@@ -2,7 +2,7 @@
 <h3 align="center">Aspiring Software Engineer | Software Developer Intern</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=Software+Developer+Intern+%40+DexaMinds;Crafting+Impactful+Software+Solutions;Always+Learning+%26+Building" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=Software+Developer+Intern+%40+DexaMinds;Always+Learning+%26+Building" alt="Typing SVG" />
 </p>
 
 ---
