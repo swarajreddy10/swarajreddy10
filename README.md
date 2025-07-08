@@ -12,7 +12,7 @@
 - 🔭 Software Developer Intern at **DexaMinds**
 - 🎓 Computer Science Engineering student @2025
 - 💡 Focused on **Java, React, DSA, Cloud Computing, and LLD**
-- 🌱 Currently working on **Front-end react web application @DexaMinds**
+- 🌱 Currently working on **SDE Intern @DexaMinds**
 - 🧠 Excited by  **AI and Developer-first tools.**
 - 🚀 Striving to build tools that create real-world impact
 
