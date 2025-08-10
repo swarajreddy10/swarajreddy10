@@ -2,7 +2,7 @@
 <h3 align="center">Turning Ideas into Scalable Code | Software Developer Intern</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=Cloud+%7C+AI+%7C+Full+Stack;Always+learning+something+new" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=AI+%7C+Full+Stack+%7C+Cloud;Always+learning+something+new" alt="Typing Animation" />
 </p>
 
 ---
@@ -92,9 +92,9 @@ Animations, dynamic routing, and **99.9% uptime**.
 ## 📫 Let’s Connect
 
 <p align="center">
-  <a href="https://swarajreddy-portfolio.netlify.app"><img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=white"></a>
+  <a href="https://swarajreddy10.github.io/"><img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=white"></a>
   <a href="https://github.com/swarajreddy10"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"></a>
-  <a href="https://linkedin.com/in/swarajreddy10"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/swarajreddy/"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
 </p>
 
 ---
