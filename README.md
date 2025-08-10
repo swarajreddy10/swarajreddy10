@@ -1,59 +1,62 @@
-<h1 align="center">Hi👋, I'm Swaraj Reddy</h1>
-<h3 align="center">Aspiring Software Engineer | Software Developer Intern</h3>
+<h1 align="center">Hey, I'm Swaraj Reddy 👋</h1>
+<h3 align="center">Turning Ideas into Scalable Code | Software Developer Intern</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=Software+Developer+Intern+%40+DexaMinds;Always+Learning+%26+Building" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=I+design%2C+build+%26+debug+real-world+apps;Cloud+%7C+AI+%7C+Full+Stack;Always+learning+something+new" alt="Typing Animation" />
 </p>
 
 ---
 
-### 👨‍💻 About Me
+## 🚀 Who Am I?
 
-- 🔭 Software Developer Intern at **DexaMinds**
-- 🎓 Computer Science Engineering student, graduating in 2025
-- 💡 Focused on **Java, React, DSA, Cloud Computing, and LLD**
-- 🧠 Excited by **AI and developer-first tools**
+I’m a **Computer Science Engineer (2025)** who loves building **fast, reliable, and scalable** applications that actually work in production.  
+From cloud infrastructure to frontend magic, I thrive at the sweet spot where **code meets creativity**.  
 
----
-
-### 🎓 Education
-- **Bachelor of Technology in Computer Science** – 8.2 CGPA  
-  GITAM University, Hyderabad (2021–2025)  
-- **Intermediate (MPC)** – 96%  
-  Narayana Jr College, Hyderabad (2019–2021)
+- 🖥 **Current Role:** Software Developer Intern at DexaMinds  
+- 🌱 Always exploring: **AI Tools, System Design, and Scalable Architectures**  
+- 🛠 Known for: Clean code, problem-solving, and making deployments *look* easy  
+- 🎯 Mission: Build products that solve *real* problems, not just look cool  
 
 ---
 
-### 💼 Experience
+## 🎓 Education
 
-**Software Developer Intern – DexaMinds** (06/2025 – Present)  
-- Built a scalable documentation platform using Next.js, React, and Vercel  
-- Automated deployments with GitHub Actions & YAML pipelines  
-- Integrated Markdown-to-React rendering for collaborative workflows  
-- Debugged deployment workflows across environments  
-
-**AWS Cloud Intern – AICTE-Edu Skills** (04/2024 – 06/2024)  
-- Deployed AWS EC2, S3, VPC for scalable cloud infrastructure  
-- Implemented serverless Lambda functions with CloudWatch monitoring  
-- Configured Auto Scaling and network components for high availability  
+| Degree | Institution | Year | Score |
+|--------|-------------|------|-------|
+| B.Tech in Computer Science | GITAM University, Hyderabad | 2021–2025 | 8.2 CGPA |
+| Intermediate (MPC) | Narayana Jr College, Hyderabad | 2019–2021 | 96% |
 
 ---
 
-### 🚀 Projects
+## 💼 Experience
 
-**AI Document Assistant (RAG-based)** | *Full Stack + AI*  
-- LangChain + HuggingFace for fast document Q&A (<300ms retrieval)  
-- FAISS backend indexing & chunking, deployed on AWS EC2  
-- Reduced manual search effort by 80%  
+**💻 Software Developer Intern — DexaMinds** *(Jun 2025 – Present)*  
+- Built a **Next.js + React** documentation platform with GitHub-driven content sync  
+- Automated deployments using **GitHub Actions & YAML**  
+- Integrated real-time Markdown-to-React rendering  
+- Debugged multi-environment workflows, improving stability
 
-**Personal Portfolio Website** | *React + GitHub Pages*  
-- Modern, responsive design showcasing skills & projects  
-- Smooth animations and dynamic routing for better UX  
-- Deployed with 99.9% uptime and fast load speeds  
+**☁ AWS Cloud Intern — AICTE-Edu Skills** *(Apr 2024 – Jun 2024)*  
+- Designed cloud infra using **EC2, S3, VPC, IAM**  
+- Implemented serverless **AWS Lambda** & real-time monitoring with CloudWatch  
+- Configured Auto Scaling for performance & uptime
 
 ---
 
-### 🧠 Tech Stack & Tools
+## 🔥 Projects That Matter
+
+### 🧠 AI Document Assistant (RAG-based)
+LangChain + HuggingFace → Smart document Q&A in under **300ms**.  
+Backend powered by **FAISS indexing**, deployed on AWS EC2.  
+📈 Reduced manual document search time by **80%**.
+
+### 🌐 Personal Portfolio
+A sleek, responsive React portfolio showcasing skills & projects.  
+Animations, dynamic routing, and **99.9% uptime**.  
+
+---
+
+## 🛠 Tech Arsenal
 
 **Languages & Frameworks**  
 ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white)
@@ -63,37 +66,39 @@
 ![React](https://img.shields.io/badge/React-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
 
-**Databases & Cloud**  
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat&logo=mysql&logoColor=white)
+**Cloud & DevOps**  
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=flat&logo=amazon-aws&logoColor=white)
-
-**DevOps & Tools**  
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
+
+**Databases & Tools**  
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat&logo=mysql&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black)
-![Google](https://img.shields.io/badge/Google-4285F4?style=flat&logo=google&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
 ![Windsurf](https://img.shields.io/badge/Windsurf-blueviolet?style=flat)
 
 ---
 
-### 📜 Certifications
-- **IBM Full Stack Software Developer** – Full-stack dev, cloud computing, microservices  
-- **AWS Foundations & Architecture** – Scalable, fault-tolerant cloud solutions  
-- **DevOps on AWS** – CI/CD, deployment, monitoring on AWS  
-- **Python Foundations & Data Structures**  
-- **Network Communication & TCP/IP** – Networking protocols, routing, security  
+## 📜 Certifications
+
+- 🏆 **IBM Full Stack Software Developer** — Full-stack, cloud, microservices  
+- ☁ **AWS Foundations & Architecture** — Scalable cloud design  
+- 🔄 **DevOps on AWS** — CI/CD, monitoring, deployment  
+- 🐍 **Python Foundations & Data Structures**  
+- 🌐 **Network Communication & TCP/IP** — Networking, routing, security
 
 ---
 
-### 🔗 Connect With Me
+## 📫 Let’s Connect
 
-- 💼 [Portfolio Website](https://swarajreddy-portfolio.netlify.app)
-- 🧑‍💻 [GitHub](https://github.com/swarajreddy10)
-- 📬 [LinkedIn](https://linkedin.com/in/swarajreddy10)
+<p align="center">
+  <a href="https://swarajreddy-portfolio.netlify.app"><img src="https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=white"></a>
+  <a href="https://github.com/swarajreddy10"><img src="https://img.shields.io/badge/GitHub-%23181717.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="https://linkedin.com/in/swarajreddy10"><img src="https://img.shields.io/badge/LinkedIn-%230A66C2.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+</p>
 
 ---
 
 <p align="center">
-  ⚡ "Code is the closest thing we have to magic." ✨
+  ⚡ *"Code is the closest thing we have to magic"* ✨  
 </p>
