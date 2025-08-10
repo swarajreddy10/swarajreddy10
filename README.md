@@ -2,7 +2,7 @@
 <h3 align="center">Turning Ideas into Scalable Code | Software Developer Intern</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=I+design%2C+build+%26+debug+real-world+apps;Cloud+%7C+AI+%7C+Full+Stack;Always+learning+something+new" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=1000&center=true&width=500&lines=Cloud+%7C+AI+%7C+Full+Stack;Always+learning+something+new" alt="Typing Animation" />
 </p>
 
 ---
