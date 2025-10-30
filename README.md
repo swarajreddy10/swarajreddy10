@@ -17,7 +17,7 @@
 
 **Computer Science Engineer (2025)** specializing in **scalable web applications** and **AI-driven solutions**. Experienced in building production systems that handle 100+ concurrent users with sub-50ms response times.
 
-- 🚀 **Current:** Software Developer Intern at **DexaMinds**
+- 🚀 **Current:** Software Developer at **DexaMinds**
 - 💡 **Focus:** Full-stack development, AI integration, cloud infrastructure
 - 🏆 **Achievement:** 99.9% uptime on production deployments
 - 📍 **Location:** Hyderabad, India
