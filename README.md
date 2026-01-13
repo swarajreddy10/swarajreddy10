@@ -2,7 +2,7 @@
 
 # Swaraj Chandra Reddy M
 
-### Software Engineer | Full-Stack Developer | Cloud & AI Specialist
+### Software Engineer | Full-Stack Developer | Cloud & AI Enthusiast
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=safari&logoColor=white)](https://swarajreddy10.github.io/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/swarajreddy/)
