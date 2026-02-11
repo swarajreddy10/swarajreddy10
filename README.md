@@ -2,176 +2,204 @@
 
 # Swaraj Chandra Reddy M
 
-### Software Engineer | Full-Stack Developer | Cloud & AI Specialist
+**Software Engineer | Full-Stack Developer**
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=safari&logoColor=white)](https://swarajreddy10.github.io/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/swarajreddy/)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/swarajreddy10)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:swarajchandra22@gmail.com)
+<p>
+  <a href="https://swarajreddy10.github.io/">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=safari&logoColor=white" alt="Portfolio"/>
+  </a>
+  <a href="https://www.linkedin.com/in/swarajreddy/">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://github.com/swarajreddy10">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  <a href="mailto:swarajchandra22@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
+  </a>
+</p>
 
 </div>
 
----
+## <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28"> About Me
 
-## 👨‍💻 Professional Summary
+```
+swaraj@dev:~$ whoami
+Swaraj Chandra Reddy M — Software Developer @ DexaMinds
 
-Software Engineer with expertise in **AI-assisted development** and **cloud-native architecture**. Specialized in building scalable full-stack applications using **Python, Java, React.js, and AWS**. Delivered production systems serving **500+ users** with **99.5% uptime**.
+swaraj@dev:~$ cat education.txt
+B.Tech CSE '25 | GITAM University | Hyderabad | 8.2 CGPA
 
-```typescript
-// Current Status
-const profile = {
-  role: "Software Developer @ DexaMinds",
-  location: "Hyderabad, India",
-  graduation: "B.Tech CSE (2025) | 8.2 CGPA",
-  focus: ["Full-Stack Development", "AI Integration", "Cloud Architecture"],
-  metrics: { uptime: "99.5%", users: "500+", testCoverage: "89%" }
-};
+swaraj@dev:~$ cat focus.txt
+Full-Stack Development
+System Design & Solution Architecture
+
+swaraj@dev:~$ cat philosophy.txt
+Automate the mundane, architect the complex, ship with confidence
 ```
 
----
-
-## 🚀 Featured Projects
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Tech Stack
 
 <table>
 <tr>
-<td width="50%">
+<td align="center" width="33%">
 
-### 📝 [ResumeCanvas](https://github.com/swarajreddy10/Resume_Canvas)
-**AI-Powered Resume Builder**
+**Languages**
 
-[![Live](https://img.shields.io/badge/Live-000000?style=flat&logo=vercel&logoColor=white)](https://www.resumecanvas.live/)
-[![Code](https://img.shields.io/badge/Code-181717?style=flat&logo=github&logoColor=white)](https://github.com/swarajreddy10/Resume_Canvas)
-
-**Stack:** Next.js, MongoDB, TypeScript, Bun
-
-**Key Features:**
-- 🤖 Groq AI (Llama 3.3 70B) for ATS optimization
-- 🔐 JWT + Google OAuth authentication
-- ⚡ Sub-100ms response with LRU caching
-- 📊 25 RESTful APIs with Zod validation
-- 📄 Puppeteer PDF export
-
-**Metrics:**
-```yaml
-Users: 500+
-Test Coverage: 89.58%
-Query Reduction: 60%
-Requests/hour: 50+
-```
+<img src="https://skillicons.dev/icons?i=py,java,ts,js&theme=dark&perline=2" alt="Languages"/>
 
 </td>
-<td width="50%">
+<td align="center" width="33%">
 
-### 🎫 [StageWay](https://github.com/swarajreddy10/StageWay)
-**Event Management Platform**
+**Frontend**
 
-[![Live](https://img.shields.io/badge/Live-000000?style=flat&logo=vercel&logoColor=white)](https://stage-way.vercel.app/)
-[![Code](https://img.shields.io/badge/Code-181717?style=flat&logo=github&logoColor=white)](https://github.com/swarajreddy10/StageWay)
+<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark&perline=3" alt="Frontend"/>
 
-**Stack:** Spring Boot, PostgreSQL, Next.js, Docker
+</td>
+<td align="center" width="33%">
 
-**Key Features:**
-- 🔒 OAuth2 JWT + Role-based access (3 levels)
-- 🗄️ 12 Flyway migrations with JPA/Hibernate
-- 📱 QR code check-ins via ZXing
-- 🐳 Docker multi-stage builds
-- 📊 Real-time analytics dashboard
+**Backend**
 
-**Metrics:**
-```yaml
-API Endpoints: 12
-Test Success: 100%
-Deployment: CI/CD
-Monitoring: Actuator
-```
+<img src="https://skillicons.dev/icons?i=nodejs,spring&theme=dark&perline=2" alt="Backend"/>
 
 </td>
 </tr>
-</table>
-
----
-
-## 💼 Professional Experience
-
-### 🏢 Software Developer | **DexaMinds** *(Jun 2025 – Present)*
-*Intern to Full-time | Hyderabad*
-
-- 🌐 Developed company website using **Next.js, Express, TypeScript** with microservices architecture
-- 🐳 Implemented independent frontend/backend deployment via **Docker**, achieving **99.5% uptime**
-- 🤖 Built AI chatbot workflow using **Botpress and LLM integration** for automated contact forms
-- ⚡ Accelerated development velocity by **40%** using **GitHub Copilot and Cursor AI**
-- ✅ Achieved **85% test coverage** with comprehensive unit testing
-
-### ☁️ AWS Cloud Intern | **AICTE Edu Skills** *(Apr 2024 – Jun 2024)*
-
-- 🏗️ Deployed and managed **AWS infrastructure** (EC2, S3, VPC, RDS) with IAM security
-- ⚡ Implemented **serverless Lambda functions** with Auto Scaling groups
-- 📊 Established **CloudWatch monitoring** and technical documentation
-
----
-
-## 🛠️ Technical Skills
-
-<table>
 <tr>
-<td valign="top" width="33%">
+<td align="center">
 
-### Languages & Frameworks
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=openjdk&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+**Databases**
 
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=spring-boot&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat&logo=express&logoColor=white)
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,mysql&theme=dark&perline=3" alt="Databases"/>
 
 </td>
-<td valign="top" width="33%">
+<td align="center">
 
-### Databases & Cloud
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=flat&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-00000F?style=flat&logo=mysql&logoColor=white)
+**Cloud & DevOps**
 
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=white)
+<img src="https://skillicons.dev/icons?i=aws,docker,vercel,git,githubactions&theme=dark&perline=3" alt="Cloud & DevOps"/>
 
 </td>
-<td valign="top" width="33%">
+<td align="center">
 
-### AI & DevOps Tools
-![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat&logo=github&logoColor=white)
-![Cursor](https://img.shields.io/badge/Cursor-000000?style=flat&logo=cursor&logoColor=white)
-![Claude CLI](https://img.shields.io/badge/Claude_CLI-4285F4?style=flat&logo=anthropic&logoColor=white)
-![Botpress](https://img.shields.io/badge/Botpress-6366F1?style=flat&logo=botpress&logoColor=white)
+**Testing & QA**
 
-![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+![JUnit](https://img.shields.io/badge/JUnit5-25A162?style=flat-square&logo=junit5&logoColor=white)
+![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![CodeRabbit](https://img.shields.io/badge/CodeRabbit-000000?style=flat-square&logo=coderabbit&logoColor=white)
+<img src="https://skillicons.dev/icons?i=postman&theme=dark" height="20" alt="Postman"/>
+
+</td>
+</tr>
+<tr>
+<td align="center" colspan="3">
+
+**AI Tools**
+
+![Claude CLI](https://img.shields.io/badge/Claude_CLI-6B4FBB?style=flat-square&logo=anthropic&logoColor=white)
+![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white)
+![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=flat-square&logo=cursor&logoColor=white)
 
 </td>
 </tr>
 </table>
 
 ### Core Competencies
-`RESTful APIs` • `Microservices` • `GraphQL` • `JWT Authentication` • `OAuth2` • `CI/CD` • `Unit Testing` • `Agile` • `Code Reviews`
+`REST APIs` • `Microservices` • `JWT Authentication` • `OAuth2` • `CI/CD` • `Unit Testing` • `Integration Testing` • `E2E Testing` • `Agile` • `Code Reviews`
 
----
+## <img src="https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif" width="28"> How I Build
+
+> I use AI tools to handle repetitive code and test scaffolding — so I can spend my time on **system design**, **architecture decisions**, and building things that actually matter. Currently learning to think at the **solution architecture** level to make better decisions across the full stack.
+
+## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="28"> Featured Projects
+
+<table>
+<tr>
+<td width="50%">
+
+<h3 align="center">
+  <a href="https://github.com/swarajreddy10/Resume_Canvas">ResumeCanvas</a>
+</h3>
+
+<div align="center">
+
+**AI-Powered Resume Builder** — craft ATS-optimized resumes with AI intelligence
+
+[![Live Demo](https://img.shields.io/badge/%E2%96%B6_Live_Demo-000?style=for-the-badge&logo=vercel&logoColor=white)](https://www.resumecanvas.live/)
+[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/swarajreddy10/Resume_Canvas)
+
+<img src="https://skillicons.dev/icons?i=nextjs,mongodb,ts,bun&theme=dark&perline=4" height="36" alt="Tech Stack"/>
+
+</div>
+
+- 🤖 Groq AI (Llama 3.3 70B) for ATS optimization
+- 🔐 JWT + Google OAuth authentication
+- ⚡ Sub-100ms response with LRU caching
+- 📊 25 RESTful APIs with Zod validation
+- 📄 Puppeteer-powered PDF export
+
+</td>
+<td width="50%">
+
+<h3 align="center">
+  <a href="https://github.com/swarajreddy10/StageWay">StageWay</a>
+</h3>
+
+<div align="center">
+
+**Event Management Platform** — end-to-end event orchestration with real-time analytics
+
+[![Live Demo](https://img.shields.io/badge/%E2%96%B6_Live_Demo-000?style=for-the-badge&logo=vercel&logoColor=white)](https://stage-way.vercel.app/)
+[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/swarajreddy10/StageWay)
+
+<img src="https://skillicons.dev/icons?i=spring,postgres,nextjs,docker&theme=dark&perline=4" height="36" alt="Tech Stack"/>
+
+</div>
+
+- 🔒 OAuth2 JWT + Role-based access (3 levels)
+- 🗄️ 12 Flyway migrations with JPA/Hibernate
+- 📱 QR code check-ins via ZXing
+- 🐳 Docker multi-stage builds
+- 📊 Real-time analytics dashboard
+
+</td>
+</tr>
+</table>
+
+## 📊 GitHub Analytics
+
+<div align="center">
+
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=1a1b27" alt="GitHub Stats"/>
+<img width="49%" src="https://streak-stats.demolab.com/?user=swarajreddy10&theme=tokyonight&hide_border=true&background=1a1b27" alt="GitHub Streak"/>
+
+<br/>
+
+<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Top Languages"/>
+
+</div>
+
+### 🏆 Trophies
+
+<div align="center">
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=swarajreddy10&theme=tokyonight&no-frame=true&no-bg=true&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+
+</div>
+
+<div align="center">
+
+[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=swarajreddy10&theme=tokyo-night&hide_border=true&bg_color=1a1b27&color=70a5fd&line=bf91f3&point=c9d1d9)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
 
 ## 🎓 Education
 
-**B.Tech in Computer Science Engineering** | GITAM University, Hyderabad  
+**B.Tech in Computer Science Engineering** | GITAM University, Hyderabad<br/>
 *Aug 2021 - Jun 2025* | **CGPA: 8.2/10**
 
-**Intermediate (MPC)** | Narayana Jr College, Hyderabad  
+**Intermediate (MPC)** | Narayana Jr College, Hyderabad<br/>
 *Jun 2019 - May 2021* | **96%**
-
----
 
 ## 📜 Certifications
 
@@ -182,60 +210,16 @@ Monitoring: Actuator
 | **AWS Foundations & Architecture** | Cloud Architecture, Security, Cost Optimization | [View](https://drive.google.com/file/d/189TjAcR7AYaRjpL8itUY-fOf4jJ-efIC/view) |
 | **Core Java Certification** | OOP, Collections, Multithreading | [View](https://drive.google.com/file/d/1-I2h63whno54Ot-NDf6YbbRgVU38iJm/view) |
 
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=default&hide_border=true&count_private=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=default&hide_border=true)
-
-</div>
-
----
-
-## 🏆 Key Achievements
-
-<table>
-<tr>
-<td align="center" width="25%">
-<h3>99.5%</h3>
-<p>Production Uptime</p>
-</td>
-<td align="center" width="25%">
-<h3>500+</h3>
-<p>Active Users</p>
-</td>
-<td align="center" width="25%">
-<h3>89%</h3>
-<p>Test Coverage</p>
-</td>
-<td align="center" width="25%">
-<h3>40%</h3>
-<p>Dev Velocity Boost</p>
-</td>
-</tr>
-</table>
-
-- ⚡ **Sub-100ms API Response** - Optimized performance with caching strategies
-- 🗄️ **60% Query Reduction** - Database optimization with proper indexing
-- 🔒 **Zero Security Incidents** - XSS/SQL injection protection, JWT authentication
-- 🤖 **AI-Assisted Development** - 40% faster development with GitHub Copilot & Cursor
-
----
-
 <div align="center">
 
 ### 💼 Open to Opportunities
 
-**Full-Stack Development** • **Cloud Architecture** • **AI/ML Integration** • **DevOps Engineering**
+**Software Development** • **Full-Stack Development** • **Backend Development**
 
----
+*"Architect the system, automate the mundane, ship with confidence"*
 
-*"Building scalable solutions with modern technologies and AI-assisted development"*
-
-[![LinkedIn](https://img.shields.io/badge/Let's_Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/swarajreddy/)
+[![LinkedIn](https://img.shields.io/badge/Let's_Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/swarajreddy/)
 
 </div>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1b27,50:70a5fd,100:bf91f3&height=120&section=footer" />
