@@ -105,9 +105,10 @@ Automate the mundane, architect the complex, ship with confidence
 </table>
 
 ### Core Competencies
-`REST APIs` • `Microservices` • `JWT Authentication` • `OAuth2` • `CI/CD` • `Unit Testing` • `Integration Testing` • `E2E Testing` • `Agile` • `Code Reviews`
+`REST APIs` • `Microservices` • `JWT Authentication` • `OAuth2` • `CI/CD`<br/>
+`Unit Testing` • `Integration Testing` • `E2E Testing` • `Agile` • `Code Reviews`
 
-## <img src="https://media.giphy.com/media/coxQHKASG60HrHtvkt/giphy.gif" width="28"> How I Build
+## 🏗️ How I Build
 
 > I use AI tools to handle repetitive code and test scaffolding — so I can spend my time on **system design**, **architecture decisions**, and building things that actually matter. Currently learning to think at the **solution architecture** level to make better decisions across the full stack.
 
@@ -170,12 +171,16 @@ Automate the mundane, architect the complex, ship with confidence
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=1a1b27" alt="GitHub Stats"/>
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&show[]=reviews&show[]=prs_merged&show[]=prs_merged_percentage&rank_icon=github&bg_color=1a1b27" alt="GitHub Stats"/>
 <img width="49%" src="https://streak-stats.demolab.com/?user=swarajreddy10&theme=tokyonight&hide_border=true&background=1a1b27" alt="GitHub Streak"/>
 
 <br/>
 
 <img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Top Languages"/>
+
+<br/>
+
+<img width="49%" src="https://github-contributor-stats.vercel.app/api?username=swarajreddy10&limit=5&theme=tokyonight&combine_all_yearly_contributions=true&hide_border=true&bg_color=1a1b27" alt="Top Contributed Repos"/>
 
 </div>
 
