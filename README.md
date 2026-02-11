@@ -2,7 +2,7 @@
 
 # Swaraj Chandra Reddy M
 
-**Software Engineer | Full-Stack Developer**
+### Software Engineer | Full-Stack Developer | Cloud & AI Enthusiast
 
 <p>
   <a href="https://swarajreddy10.github.io/">
