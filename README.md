@@ -208,9 +208,9 @@ Automate the mundane, architect the complex, ship with confidence
 
 | Certification | Focus Area | Link |
 |--------------|------------|------|
-| **IBM Full Stack Software Developer** | Microservices, Cloud, Containerization, DevOps | [View](https://drive.google.com/file/d/1I9ggwsrVswrxcgNPkRfWYNjdp3h5xorv/view) |
+| **IBM Full Stack Software Developer** | Microservices, Cloud, Containerization, DevOps | [View](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url) |
 | **MongoDB Python Developer Path** | Database Design, Aggregation, Indexing | [View](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf) |
-| **AWS Foundations & Architecture** | Cloud Architecture, Security, Cost Optimization | [View](https://drive.google.com/file/d/189TjAcR7AYaRjpL8itUY-fOf4jJ-efIC/view) |
+| **AWS Foundations & Architecture** | Cloud Architecture, Security, Cost Optimization | [View](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url) |
 | **Core Java Certification** | OOP, Collections, Multithreading | [View](https://drive.google.com/file/d/1-I2h63whno54Ot-NDf6YbbRgVU38iJm/view) |
 
 <div align="center">
