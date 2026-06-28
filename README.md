@@ -2,227 +2,152 @@
 
 # Swaraj Chandra Reddy M
 
-### Software Engineer | Full-Stack Developer | Cloud & AI Enthusiast
+### Software Engineer | Backend Systems, Cloud Delivery, Product Interfaces
 
-<p>
-  <a href="https://swarajreddy10.github.io/">
-    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=safari&logoColor=white" alt="Portfolio"/>
-  </a>
-  <a href="https://www.linkedin.com/in/swarajreddy/">
-    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  </a>
-  <a href="mailto:swarajchandra22@gmail.com">
-    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"/>
-  </a>
-</p>
-
-</div>
-
-## <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="28"> About Me
-
-```
-swaraj@dev:~$ whoami
-Swaraj Chandra Reddy M — Software Developer @ DexaMinds
-
-swaraj@dev:~$ cat education.txt
-B.Tech CSE '25 | GITAM University | Hyderabad | 8.2 CGPA
-
-swaraj@dev:~$ cat focus.txt
-Full-Stack Development
-System Design & Solution Architecture
-
-swaraj@dev:~$ cat philosophy.txt
-Automate the mundane, architect the complex, ship with confidence
-```
-
-## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Tech Stack
+<sub>Building systems that earn trust, and keeping the path from idea to production clear.</sub>
 
 <table>
-<tr>
-<td align="center" width="33%">
-
-**Languages**
-
-<img src="https://skillicons.dev/icons?i=py,java,ts,js&theme=dark&perline=2" alt="Languages"/>
-
-</td>
-<td align="center" width="33%">
-
-**Frontend**
-
-<img src="https://skillicons.dev/icons?i=react,nextjs,tailwind&theme=dark&perline=3" alt="Frontend"/>
-
-</td>
-<td align="center" width="33%">
-
-**Backend**
-
-<img src="https://skillicons.dev/icons?i=nodejs,spring&theme=dark&perline=2" alt="Backend"/>
-
-</td>
-</tr>
-<tr>
-<td align="center">
-
-**Databases**
-
-<img src="https://skillicons.dev/icons?i=postgres,mongodb,mysql&theme=dark&perline=3" alt="Databases"/>
-
-</td>
-<td align="center">
-
-**Cloud & DevOps**
-
-<img src="https://skillicons.dev/icons?i=aws,docker,vercel,git,githubactions&theme=dark&perline=3" alt="Cloud & DevOps"/>
-
-</td>
-<td align="center">
-
-**Testing & QA**
-
-![JUnit](https://img.shields.io/badge/JUnit5-25A162?style=flat-square&logo=junit5&logoColor=white)
-![Mocha](https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=mocha&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
-![CodeRabbit](https://img.shields.io/badge/CodeRabbit-000000?style=flat-square&logo=coderabbit&logoColor=white)
-<img src="https://skillicons.dev/icons?i=postman&theme=dark" height="20" alt="Postman"/>
-
-</td>
-</tr>
-<tr>
-<td align="center" colspan="3">
-
-**AI Tools**
-
-![Claude CLI](https://img.shields.io/badge/Claude_CLI-6B4FBB?style=flat-square&logo=anthropic&logoColor=white)
-![GitHub Copilot](https://img.shields.io/badge/GitHub_Copilot-000000?style=flat-square&logo=githubcopilot&logoColor=white)
-![Cursor AI](https://img.shields.io/badge/Cursor_AI-000000?style=flat-square&logo=cursor&logoColor=white)
-
-</td>
-</tr>
+  <tr>
+    <td align="center">
+      <a href="https://swarajreddy10.github.io/">
+        <img src="https://swarajreddy10.github.io/favicon.svg" width="28" height="28" alt="Portfolio"><br>
+        <sub>Portfolio</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/swarajreddy/">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="28" height="28" alt="LinkedIn"><br>
+        <sub>LinkedIn</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://medium.com/dexaminds">
+        <img src="https://cdn.simpleicons.org/medium/00AB6C" width="28" height="28" alt="Medium"><br>
+        <sub>Medium</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/swarajreddy10">
+        <img src="https://cdn.simpleicons.org/github/6E7781" width="28" height="28" alt="GitHub"><br>
+        <sub>GitHub</sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="mailto:swarajchandra22@gmail.com">
+        <img src="https://cdn.simpleicons.org/gmail/EA4335" width="28" height="28" alt="Email"><br>
+        <sub>Email</sub>
+      </a>
+    </td>
+  </tr>
 </table>
 
-### Core Competencies
-`REST APIs` • `Microservices` • `JWT Authentication` • `OAuth2` • `CI/CD`<br/>
-`Unit Testing` • `Integration Testing` • `E2E Testing` • `Agile` • `Code Reviews`
+</div>
 
-## 🏗️ How I Build
+I like understanding the why before I build the what. I learn fast, ask thoughtful questions, adapt quickly when the path changes, and turn messy ideas into software that feels simple to use and solid to rely on.
 
-> I use AI tools to handle repetitive code and test scaffolding — so I can spend my time on **system design**, **architecture decisions**, and building things that actually matter. Currently learning to think at the **solution architecture** level to make better decisions across the full stack.
+Right now, that means building across production backend systems, cloud delivery, and product-facing workflows with `Go`, `Python`, `PostgreSQL`, `AWS`, `Terraform`, and `GitHub Actions`, while bringing strong project-building and backend engineering discipline from `Java` and `Spring Boot`.
 
-## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="28"> Featured Projects
+| Current role | Focus | Writing |
+|---|---|---|
+| Software Engineer at Dexaminds | Patient-care platform, async workflows, backend reliability | Enterprise AI, runtimes, developer tooling |
 
-<table>
-<tr>
-<td width="50%">
+## What I Work On
 
-<h3 align="center">
-  <a href="https://github.com/swarajreddy10/Resume_Canvas">ResumeCanvas</a>
-</h3>
+- Building reliable services and async workflows with explicit contracts, idempotency, observability, and recovery paths.
+- Shipping across backend, infrastructure, and product surfaces instead of treating them as separate silos.
+- Using AI tools deliberately for exploration, scaffolding, and acceleration while keeping architecture, tradeoffs, and review under direct engineering control.
+- Staying current with runtime shifts, AI product patterns, and developer tooling changes through hands-on work, technical writing, and continuous experimentation.
+
+## Selected Metrics
+
+| Area | Proof |
+|---|---|
+| Patient-care platform | `52.3s` ingestion, `48.1s` CDIS, `0.2s` handoff gap, `100.6s` end-to-end runtime |
+| Reliability patterns | `24-hour` idempotency, KMS-backed versioned storage, tombstone-first deletes, DLQ-backed recovery |
+| ResumeCanvas | `95.2%` test coverage, `129` tests, `220` assertions, `60%` query load reduction via `7` indexes |
+| StageWay | `100%` API test coverage, `12` Flyway migrations, `3` role-based permission levels |
+| Internship impact | Fixed `15+` production bugs across frontend and backend and pushed verified fixes |
+
+## Core Stack
 
 <div align="center">
 
-**AI-Powered Resume Builder** — craft ATS-optimized resumes with AI intelligence
+### Languages
+<img src="https://skillicons.dev/icons?i=go,python,java,ts,js,sql&theme=dark" alt="Languages">
 
-[![Live Demo](https://img.shields.io/badge/%E2%96%B6_Live_Demo-000?style=for-the-badge&logo=vercel&logoColor=white)](https://www.resumecanvas.live/)
-[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/swarajreddy10/Resume_Canvas)
+### Backend and Frontend
+<img src="https://skillicons.dev/icons?i=fastapi,spring,nodejs,react,nextjs,tailwind&theme=dark" alt="Backend and Frontend">
 
-<img src="https://skillicons.dev/icons?i=nextjs,mongodb,ts,bun&theme=dark&perline=4" height="36" alt="Tech Stack"/>
+### Data, Cloud, and Delivery
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,aws,docker,terraform,githubactions&theme=dark" alt="Data Cloud and Delivery">
 
 </div>
 
-- 🤖 Groq AI (Llama 3.3 70B) for ATS optimization
-- 🔐 JWT + Google OAuth authentication
-- ⚡ Sub-100ms response with LRU caching
-- 📊 25 RESTful APIs with Zod validation
-- 📄 Puppeteer-powered PDF export
+### AI-Assisted Engineering
 
-</td>
-<td width="50%">
+`Codex` · `Claude` · `NotebookLM` · `Cursor`
 
-<h3 align="center">
-  <a href="https://github.com/swarajreddy10/StageWay">StageWay</a>
-</h3>
+I use AI tooling to speed up drafting, test scaffolding, exploration, and synthesis. I keep system design, code review, architecture decisions, and release judgment human and explicit.
+
+## How I Think and Work
+
+- I am highly curious about system design and architecture, especially where real delivery constraints force better decisions than theory alone.
+- Hands-on production work sharpened how I reason about boundaries, failure modes, contracts, and long-term maintainability.
+- I communicate clearly, ask thoughtful questions early, and adapt quickly when requirements, constraints, or rollout paths change.
+- I enjoy understanding market and engineering shifts, then translating them into practical decisions about products, runtimes, and developer workflows.
+
+## Work
+
+### Patient-Care Platform
+Production work at Dexaminds spanning ingestion and CDIS, with ownership across service boundaries, workflow contracts, and AWS delivery paths.
+
+- Built independently deployable Go services for control-plane and downstream processing.
+- Shipped async workflows with `S3`, `EventBridge`, `Step Functions`, `SQS/DLQ`, `ECS`, `PostgreSQL`, and `Terraform`.
+- Hardened the platform with idempotency, audit-safe storage, lineage-aware event history, and recovery paths for stale or stuck work.
+
+## Selected Projects
+
+### [ResumeCanvas](https://github.com/swarajreddy10/Resume_Canvas)
+AI-powered resume builder focused on performance, ATS relevance, and production-grade user experience.
+
+- Built with `Next.js`, `TypeScript`, `MongoDB`, `Bun`, `NextAuth.js`, `Zod`, and `Puppeteer`.
+- Added `8` AI features, `5` resume templates, public sharing, and PDF export.
+- Reached `95.2%` test coverage and cut query load by `60%` through targeted indexing.
+- Live: [resumecanvas.live](https://www.resumecanvas.live/)
+
+### [StageWay](https://github.com/swarajreddy10/StageWay)
+Full-stack event management platform built with strong backend structure and delivery discipline.
+
+- Built with `Spring Boot`, `PostgreSQL`, `Next.js`, `Docker`, `OAuth2`, `JWT`, `Flyway`, and `JPA/Hibernate`.
+- Implemented `3` permission roles, `12` migrations, QR check-ins, analytics, and waitlist workflows.
+- Maintained `100%` API test coverage while keeping the architecture clean and deployment-friendly.
+- Live: [stage-way.vercel.app](https://stage-way.vercel.app/)
+
+## Writing and Technical Curiosity
+
+I write when I want to clarify a shift, not just consume it. Recent pieces published on Dexaminds Medium:
+
+- [Why enterprise AI is moving from chat interfaces to workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6)
+- [Why JavaScript runtimes are being rethought: from Node.js to Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
+
+## GitHub Signals
+
+Public GitHub signals from my main profile, kept here as supporting proof rather than the main story.
 
 <div align="center">
 
-**Event Management Platform** — end-to-end event orchestration with real-time analytics
+<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&show[]=reviews&show[]=prs_merged&show[]=prs_merged_percentage&rank_icon=github&bg_color=1a1b27" alt="GitHub Stats">
+<img width="49%" src="https://streak-stats.demolab.com/?user=swarajreddy10&theme=tokyonight&hide_border=true&background=1a1b27" alt="GitHub Streak">
 
-[![Live Demo](https://img.shields.io/badge/%E2%96%B6_Live_Demo-000?style=for-the-badge&logo=vercel&logoColor=white)](https://stage-way.vercel.app/)
-[![Source Code](https://img.shields.io/badge/Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/swarajreddy10/StageWay)
+<br>
 
-<img src="https://skillicons.dev/icons?i=spring,postgres,nextjs,docker&theme=dark&perline=4" height="36" alt="Tech Stack"/>
-
-</div>
-
-- 🔒 OAuth2 JWT + Role-based access (3 levels)
-- 🗄️ 12 Flyway migrations with JPA/Hibernate
-- 📱 QR code check-ins via ZXing
-- 🐳 Docker multi-stage builds
-- 📊 Real-time analytics dashboard
-
-</td>
-</tr>
-</table>
-
-## 📊 GitHub Analytics
-
-<div align="center">
-
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&show[]=reviews&show[]=prs_merged&show[]=prs_merged_percentage&rank_icon=github&bg_color=1a1b27" alt="GitHub Stats"/>
-<img width="49%" src="https://streak-stats.demolab.com/?user=swarajreddy10&theme=tokyonight&hide_border=true&background=1a1b27" alt="GitHub Streak"/>
-
-<br/>
-
-<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Top Languages"/>
-
-<br/>
-
-<img width="49%" src="https://github-contributor-stats.vercel.app/api?username=swarajreddy10&limit=5&theme=tokyonight&combine_all_yearly_contributions=true&hide_border=true&bg_color=1a1b27" alt="Top Contributed Repos"/>
+<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Top Languages">
+<img width="49%" src="https://github-contributor-stats.vercel.app/api?username=swarajreddy10&limit=5&theme=tokyonight&combine_all_yearly_contributions=true&hide_border=true&bg_color=1a1b27" alt="Top Contributed Repositories">
 
 </div>
 
-### 🏆 Trophies
+## Connect
 
-<div align="center">
+Open to software engineering roles where backend ownership, product thinking, cloud delivery, and engineering judgment all matter.
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=swarajreddy10&theme=tokyonight&no-frame=true&no-bg=true&column=7)](https://github.com/ryo-ma/github-profile-trophy)
-
-</div>
-
-<div align="center">
-
-[![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=swarajreddy10&theme=tokyo-night&hide_border=true&bg_color=1a1b27&color=70a5fd&line=bf91f3&point=c9d1d9)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-</div>
-
-## 🎓 Education
-
-**B.Tech in Computer Science Engineering** | GITAM University, Hyderabad<br/>
-*Aug 2021 - Jun 2025* | **CGPA: 8.2/10**
-
-**Intermediate (MPC)** | Narayana Jr College, Hyderabad<br/>
-*Jun 2019 - May 2021* | **96%**
-
-## 📜 Certifications
-
-| Certification | Focus Area | Link |
-|--------------|------------|------|
-| **IBM Full Stack Software Developer** | Microservices, Cloud, Containerization, DevOps | [View](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url) |
-| **MongoDB Python Developer Path** | Database Design, Aggregation, Indexing | [View](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf) |
-| **AWS Foundations & Architecture** | Cloud Architecture, Security, Cost Optimization | [View](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url) |
-| **Core Java Certification** | OOP, Collections, Multithreading | [View](https://drive.google.com/file/d/1-I2h63whno54Ot-NDf6YbbRgVU38iJm/view) |
-
-<div align="center">
-
-### 💼 Open to Opportunities
-
-**Software Development** • **Full-Stack Development** • **Backend Development**
-
-*"Architect the system, automate the mundane, ship with confidence"*
-
-[![LinkedIn](https://img.shields.io/badge/Let's_Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/swarajreddy/)
-
-</div>
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1a1b27,50:70a5fd,100:bf91f3&height=120&section=footer" />
+[Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Medium](https://medium.com/dexaminds) · [GitHub](https://github.com/swarajreddy10) · [Email](mailto:swarajchandra22@gmail.com)
