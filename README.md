@@ -4,13 +4,13 @@
 
 ### Software Engineer at Dexaminds
 
-Hyderabad · Go, TypeScript, PostgreSQL, AWS
+Backend, search, and applied AI · Hyderabad
 
 [Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Email](mailto:swarajchandra22@gmail.com) · [Writing](https://medium.com/dexaminds)
 
 </div>
 
-I build the path from a messy source to one record someone can trust, then to search that still answers when one signal is missing. That work is SpotMyJob: Go services for source governance and job transformation, and a TypeScript search service in front of them.
+I build the path from a messy source to one record someone can trust, then to search that still answers when one signal is missing. That work is SpotMyJob: Go services for source governance and job transformation, a TypeScript search service, and versioned embeddings that feed hybrid retrieval.
 
 1+ year in production. The three months before that were a React and TypeScript internship on the same team. Company repositories are private, so this page is the public case study. The projects and essays below are open.
 
@@ -18,7 +18,7 @@ I build the path from a messy source to one record someone can trust, then to se
 
 Open to backend, full-stack, platform, and applied AI roles. Remote, hybrid, or on-site.
 
-Useful notes are specific: a service boundary, a ranking change, or a measurement that has to hold while the database is already busy. [Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough.
+[Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough. I can go deep on retrieval and embeddings, document extraction that stops for human review, or a backend change that has to hold while the database is already busy.
 
 ## SpotMyJob
 
@@ -35,6 +35,7 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 
 - **64%** higher transformation throughput after raising bounded concurrency from 16 to 20 workers. PostgreSQL CPU and I/O stayed flat or fell.
 - **17x** faster vector feed pages, from 238 seconds to 13.7 seconds, with **98.2%** recall@10 against a **98.3%** full-precision baseline.
+- Job and seeker text share one versioned vector space. Qwen3 0.6B runs through Cloudflare's OpenAI-compatible Workers AI gateway, and the 1,024-dimensional vectors sit in pgvector for hybrid retrieval.
 - A reference load projected at **30.2 minutes** finished in **2 minutes 34 seconds**.
 - Recurring external fetches fell **43%**. An invalid or stale change signal still triggers an alarmed full sweep.
 
@@ -42,7 +43,6 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 <summary>Notes for someone who wants the design, not only the numbers</summary>
 
 - Hybrid retrieval uses semantic search, PostgreSQL full-text search, structured skill identity, and query relevance, then merges the lists with Reciprocal Rank Fusion. If one path is unavailable, the query continues with the signals that remain.
-- Job vectors and seeker vectors share one versioned space. The Qwen3 embedding model runs through Cloudflare's OpenAI-compatible Workers AI gateway, and the vectors sit in pgvector.
 - The feed is replay-safe: durable cursors, idempotent upserts, tombstones, and a complete-set reconciliation when a removal event is missed.
 - The 17x feed change came from half-precision HNSW: a `halfvec` expression index, plus removal of the redundant full-precision index. Recall stayed at the figures above.
 - AWS delivery is ECS, RDS PostgreSQL, S3, EventBridge Scheduler, SQS with a dead-letter queue, Service Connect, CloudWatch, Terraform, Docker, and GitHub Actions with OIDC. Third-party Actions are pinned to commit SHAs.
@@ -54,13 +54,13 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 
 Osulo ingested healthcare documents and turned unstructured clinical content into structured fields. I was the primary contributor on two Go services: document ingestion, and clinical-document extraction.
 
-The stages were separate on purpose: secure upload, sanitization, model-assisted extraction, human review, then publication. Vertex AI Gemini and Azure OpenAI GPT mapped sanitized prescriptions and laboratory reports into schema-validated fields, and the source lineage stayed attached for review.
+The stages were separate on purpose: secure upload, sanitization, model-assisted extraction, human review, then publication. Vertex AI Gemini and Azure OpenAI GPT proposed fields from sanitized prescriptions and laboratory reports. Only schema-validated fields moved forward, and the source lineage stayed attached for review.
 
 In dev, ingestion took **52 seconds**, extraction took **48 seconds**, and the handoff between the services took **200ms**. End to end, a document took **100.6 seconds**. Fixture-backed contract tests guarded the OpenAPI and event boundary. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
 
 ## Open and worth a look
 
-**[ResumeCanvas](https://www.resumecanvas.live/)** is the product you can click through. Next.js, React, TypeScript, and MongoDB. Coverage is **95.2%** across 129 tests and 220 assertions. Cached responses stay under **100ms**, and 7 indexes cut query load by **60%**. It has 8 AI-assisted features, 5 templates, PDF export, and public sharing. [Source](https://github.com/swarajreddy10/Resume_Canvas).
+**[ResumeCanvas](https://www.resumecanvas.live/)** is the product you can click through. Next.js, React, TypeScript, and MongoDB. Coverage is **95.2%** across 129 tests and 220 assertions. Cached responses stay under **100ms**, and 7 indexes cut query load by **60%**. Eight AI features call Groq's Llama 3.3 70B, including ATS scoring, keyword analysis, cover-letter generation, and job matching, with 5 templates, PDF export, and public sharing. [Source](https://github.com/swarajreddy10/Resume_Canvas).
 
 **[Portfolio](https://swarajreddy10.github.io/)** is Next.js and React. Lighthouse scores 100 on accessibility, best practices, and SEO, and 99 on desktop performance. [Source](https://github.com/swarajreddy10/swarajreddy10.github.io).
 
@@ -75,7 +75,7 @@ The internship, from Jun 2025 to Sep 2025, was reusable React and TypeScript UI,
 
 I write the decision down: the alternative, the constraint, and the check that will show whether it worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure should stay visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
 
-AI shortens the research and the draft. A change still waits on the primary documentation, the tests, the benchmark, peer review, and what production actually recorded.
+AI assists research, implementation options, debugging, and review. I still own the decision. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## Stack
 
