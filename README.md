@@ -2,152 +2,67 @@
 
 # Swaraj Chandra Reddy M
 
-### Software Engineer | Backend Systems, Cloud Delivery, Product Interfaces
+### Software Engineer · Go services, Node.js search, React
 
-<sub>Building systems that earn trust, and keeping the path from idea to production clear.</sub>
+Hyderabad · Open to backend, full-stack, and cloud roles
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://swarajreddy10.github.io/">
-        <img src="https://swarajreddy10.github.io/favicon.svg" width="28" height="28" alt="Portfolio"><br>
-        <sub>Portfolio</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://www.linkedin.com/in/swarajreddy/">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="28" height="28" alt="LinkedIn"><br>
-        <sub>LinkedIn</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://medium.com/dexaminds">
-        <img src="https://cdn.simpleicons.org/medium/00AB6C" width="28" height="28" alt="Medium"><br>
-        <sub>Medium</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/swarajreddy10">
-        <img src="https://cdn.simpleicons.org/github/6E7781" width="28" height="28" alt="GitHub"><br>
-        <sub>GitHub</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="mailto:swarajchandra22@gmail.com">
-        <img src="https://cdn.simpleicons.org/gmail/EA4335" width="28" height="28" alt="Email"><br>
-        <sub>Email</sub>
-      </a>
-    </td>
-  </tr>
-</table>
+[Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Email](mailto:swarajchandra22@gmail.com)
 
 </div>
 
-I like understanding the why before I build the what. I learn fast, ask thoughtful questions, adapt quickly when the path changes, and turn messy ideas into software that feels simple to use and solid to rely on.
+Software Engineer at Dexaminds, with 1+ year in production after a 3-month internship on the same team. I build SpotMyJob: the Go services that turn employer job data into one record per posting, and the Node.js search plus React Discover experience in front of it.
 
-Right now, that means building across production backend systems, cloud delivery, and product-facing workflows with `Go`, `Python`, `PostgreSQL`, `AWS`, `Terraform`, and `GitHub Actions`, while bringing strong project-building and backend engineering discipline from `Java` and `Spring Boot`.
+## Start here
 
-| Current role | Focus | Writing |
-|---|---|---|
-| Software Engineer at Dexaminds | Patient-care platform, async workflows, backend reliability | Enterprise AI, runtimes, developer tooling |
-
-## What I Work On
-
-- Building reliable services and async workflows with explicit contracts, idempotency, observability, and recovery paths.
-- Shipping across backend, infrastructure, and product surfaces instead of treating them as separate silos.
-- Using AI tools deliberately for exploration, scaffolding, and acceleration while keeping architecture, tradeoffs, and review under direct engineering control.
-- Staying current with runtime shifts, AI product patterns, and developer tooling changes through hands-on work, technical writing, and continuous experimentation.
-
-## Selected Metrics
-
-| Area | Proof |
+| Work | What changed |
 |---|---|
-| Patient-care platform | `52.3s` ingestion, `48.1s` CDIS, `0.2s` handoff gap, `100.6s` end-to-end runtime |
-| Reliability patterns | `24-hour` idempotency, KMS-backed versioned storage, tombstone-first deletes, DLQ-backed recovery |
-| ResumeCanvas | `95.2%` test coverage, `129` tests, `220` assertions, `60%` query load reduction via `7` indexes |
-| StageWay | `100%` API test coverage, `12` Flyway migrations, `3` role-based permission levels |
-| Internship impact | Fixed `15+` production bugs across frontend and backend and pushed verified fixes |
+| SpotMyJob | **64%** higher transformation throughput. Vector feed batch **17x** faster, 238s to 13.7s, recall held at **98.2%**. |
+| Osulo | Go document pipeline on AWS. **52s** ingest, **48s** extraction, **200ms** handoff in dev. |
+| [ResumeCanvas](https://www.resumecanvas.live/) | **95.2%** test coverage. API responses under **100ms**. MongoDB query load down **60%**. |
 
-## Core Stack
+Company code for SpotMyJob and Osulo is private. The numbers above are the public proof. ResumeCanvas and the portfolio are public.
 
-<div align="center">
+## SpotMyJob
 
-### Languages
-<img src="https://skillicons.dev/icons?i=go,python,java,ts,js,sql&theme=dark" alt="Languages">
+Primary contributor on two Go services: source governance and job transformation. Major contributor on the seeker app: Fastify on Node.js, TypeScript, and React.
 
-### Backend and Frontend
-<img src="https://skillicons.dev/icons?i=fastapi,spring,nodejs,react,nextjs,tailwind&theme=dark" alt="Backend and Frontend">
+- Moved bounded concurrency from 16 to 20 workers. Throughput rose **64%** under fixed compute, while PostgreSQL CPU and I/O stayed flat or fell.
+- Cut a projected reference-data load from 30.2 minutes to **2 minutes 34 seconds**.
+- Cut recurring external fetches **43%**, with a full scan when change data is incomplete.
+- Added hybrid retrieval on the Node.js search service and shipped React Discover filters for skill and location.
+- Shipped the path on PostgreSQL, AWS, Terraform, Docker, and GitHub Actions.
 
-### Data, Cloud, and Delivery
-<img src="https://skillicons.dev/icons?i=postgres,mongodb,aws,docker,terraform,githubactions&theme=dark" alt="Data Cloud and Delivery">
+## Also shipped
 
-</div>
+**Osulo, completed.** Primary contributor on two Go services for document ingestion and clinical-document extraction. Step Functions, EventBridge, SQS, S3, and fixture-backed contract tests on the OpenAPI boundary.
 
-### AI-Assisted Engineering
+**Internship, Jun 2025 to Sep 2025.** React and TypeScript UI, plus **15+** frontend and backend production fixes.
 
-`Codex` · `Claude` · `NotebookLM` · `Cursor`
+**[ResumeCanvas](https://github.com/swarajreddy10/Resume_Canvas).** Next.js, React, TypeScript, MongoDB. 129 tests, 220 assertions, eight AI-assisted features, five templates, PDF export. Live at [resumecanvas.live](https://www.resumecanvas.live/).
 
-I use AI tooling to speed up drafting, test scaffolding, exploration, and synthesis. I keep system design, code review, architecture decisions, and release judgment human and explicit.
+**[Portfolio](https://swarajreddy10.github.io/).** Next.js and React. Lighthouse 100 on accessibility, best practices, and SEO.
 
-## How I Think and Work
-
-- I am highly curious about system design and architecture, especially where real delivery constraints force better decisions than theory alone.
-- Hands-on production work sharpened how I reason about boundaries, failure modes, contracts, and long-term maintainability.
-- I communicate clearly, ask thoughtful questions early, and adapt quickly when requirements, constraints, or rollout paths change.
-- I enjoy understanding market and engineering shifts, then translating them into practical decisions about products, runtimes, and developer workflows.
-
-## Work
-
-### Patient-Care Platform
-Production work at Dexaminds spanning ingestion and CDIS, with ownership across service boundaries, workflow contracts, and AWS delivery paths.
-
-- Built independently deployable Go services for control-plane and downstream processing.
-- Shipped async workflows with `S3`, `EventBridge`, `Step Functions`, `SQS/DLQ`, `ECS`, `PostgreSQL`, and `Terraform`.
-- Hardened the platform with idempotency, audit-safe storage, lineage-aware event history, and recovery paths for stale or stuck work.
-
-## Selected Projects
-
-### [ResumeCanvas](https://github.com/swarajreddy10/Resume_Canvas)
-AI-powered resume builder focused on performance, ATS relevance, and production-grade user experience.
-
-- Built with `Next.js`, `TypeScript`, `MongoDB`, `Bun`, `NextAuth.js`, `Zod`, and `Puppeteer`.
-- Added `8` AI features, `5` resume templates, public sharing, and PDF export.
-- Reached `95.2%` test coverage and cut query load by `60%` through targeted indexing.
-- Live: [resumecanvas.live](https://www.resumecanvas.live/)
-
-### [StageWay](https://github.com/swarajreddy10/StageWay)
-Full-stack event management platform built with strong backend structure and delivery discipline.
-
-- Built with `Spring Boot`, `PostgreSQL`, `Next.js`, `Docker`, `OAuth2`, `JWT`, `Flyway`, and `JPA/Hibernate`.
-- Implemented `3` permission roles, `12` migrations, QR check-ins, analytics, and waitlist workflows.
-- Maintained `100%` API test coverage while keeping the architecture clean and deployment-friendly.
-- Live: [stage-way.vercel.app](https://stage-way.vercel.app/)
-
-## Writing and Technical Curiosity
-
-I write when I want to clarify a shift, not just consume it. Recent pieces published on Dexaminds Medium:
-
-- [Why enterprise AI is moving from chat interfaces to workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6)
-- [Why JavaScript runtimes are being rethought: from Node.js to Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
-
-## GitHub Signals
-
-Public GitHub signals from my main profile, kept here as supporting proof rather than the main story.
+## Stack
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&show[]=reviews&show[]=prs_merged&show[]=prs_merged_percentage&rank_icon=github&bg_color=1a1b27" alt="GitHub Stats">
-<img width="49%" src="https://streak-stats.demolab.com/?user=swarajreddy10&theme=tokyonight&hide_border=true&background=1a1b27" alt="GitHub Streak">
-
-<br>
-
-<img width="40%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27" alt="Top Languages">
-<img width="49%" src="https://github-contributor-stats.vercel.app/api?username=swarajreddy10&limit=5&theme=tokyonight&combine_all_yearly_contributions=true&hide_border=true&bg_color=1a1b27" alt="Top Contributed Repositories">
+<img src="https://skillicons.dev/icons?i=go,ts,nodejs,react,nextjs,postgres,mongodb,aws,docker,terraform,githubactions&theme=dark" alt="Go, TypeScript, Node.js, React, Next.js, PostgreSQL, MongoDB, AWS, Docker, Terraform, GitHub Actions">
 
 </div>
 
-## Connect
+Go · TypeScript · Node.js · React · Next.js · Python · PostgreSQL · MongoDB · AWS · Docker · Terraform · GitHub Actions
 
-Open to software engineering roles where backend ownership, product thinking, cloud delivery, and engineering judgment all matter.
+## Background
 
-[Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Medium](https://medium.com/dexaminds) · [GitHub](https://github.com/swarajreddy10) · [Email](mailto:swarajchandra22@gmail.com)
+**GITAM University**, B.Tech in Computer Science, 2021 to 2025, CGPA 8.2/10.
+
+[IBM Full Stack Software Developer](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url) · [AWS Cloud Foundations and Cloud Architecting](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url) · [MongoDB Python Developer Path](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf)
+
+[Enterprise AI workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6) · [Node.js and Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
+
+<div align="center">
+
+<img width="46%" src="https://github-readme-stats.vercel.app/api?username=swarajreddy10&show_icons=true&theme=github_dark&hide_border=true&bg_color=00000000&include_all_commits=true&hide_rank=true" alt="GitHub contribution stats">
+<img width="36%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=swarajreddy10&layout=compact&theme=github_dark&hide_border=true&bg_color=00000000&langs_count=6" alt="Top languages">
+
+</div>
