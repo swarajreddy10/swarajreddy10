@@ -2,63 +2,96 @@
 
 # Swaraj Chandra Reddy M
 
-### Software Engineer · Go services, Node.js search, React
+### Software Engineer at Dexaminds
 
-Hyderabad · Open to backend, full-stack, and cloud roles
+Hyderabad · Go, TypeScript, PostgreSQL, AWS
 
-[Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Email](mailto:swarajchandra22@gmail.com)
+[Portfolio](https://swarajreddy10.github.io/) · [LinkedIn](https://www.linkedin.com/in/swarajreddy/) · [Email](mailto:swarajchandra22@gmail.com) · [Writing](https://medium.com/dexaminds)
 
 </div>
 
-Software Engineer at Dexaminds, with 1+ year in production after a 3-month internship on the same team. I build SpotMyJob: the Go services that turn employer job data into one record per posting, and the Node.js search plus React Discover experience in front of it.
+I build the path from a messy source to one record someone can trust, then to search that still answers when one signal is missing. That work is SpotMyJob: Go services for source governance and job transformation, and a TypeScript search service in front of them.
 
-## Start here
+1+ year in production. The three months before that were a React and TypeScript internship on the same team. Company repositories are private, so this page is the public case study. The projects and essays below are open.
 
-| Work | What changed |
-|---|---|
-| SpotMyJob | **64%** higher transformation throughput. Vector feed batch **17x** faster, 238s to 13.7s, recall held at **98.2%**. |
-| Osulo | Go document pipeline on AWS. **52s** ingest, **48s** extraction, **200ms** handoff in dev. |
-| [ResumeCanvas](https://www.resumecanvas.live/) | **95.2%** test coverage. API responses under **100ms**. MongoDB query load down **60%**. |
+## Work with me
 
-Company code for SpotMyJob and Osulo is private. The numbers above are the public proof. ResumeCanvas and the portfolio are public.
+Open to backend, full-stack, platform, and applied AI roles. Remote, hybrid, or on-site.
+
+Useful notes are specific: a service boundary, a ranking change, or a measurement that has to hold while the database is already busy. [Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough.
 
 ## SpotMyJob
 
-Primary contributor on two Go services: source governance and job transformation. Major contributor on the seeker app: Fastify on Node.js, TypeScript, and React.
+Employer sources stay governed. Each posting becomes one canonical record. Search reads a versioned feed, and each service keeps its own database, so a new source adapter does not require a change in search.
 
-- Moved bounded concurrency from 16 to 20 workers. Throughput rose **64%** under fixed compute, while PostgreSQL CPU and I/O stayed flat or fell.
-- Cut a projected reference-data load from 30.2 minutes to **2 minutes 34 seconds**.
-- Cut recurring external fetches **43%**, with a full scan when change data is incomplete.
-- Added hybrid retrieval on the Node.js search service and shipped React Discover filters for skill and location.
-- Shipped the path on PostgreSQL, AWS, Terraform, Docker, and GitHub Actions.
+```mermaid
+flowchart LR
+  A[Employer sources] --> B[Source governance]
+  B --> C[Job transformation]
+  C --> D[Seeker search]
+```
 
-## Also shipped
+I am the primary contributor on the two Go backends. I am a major contributor on the TypeScript search service, including ingestion, location, skill, and ranking.
 
-**Osulo, completed.** Primary contributor on two Go services for document ingestion and clinical-document extraction. Step Functions, EventBridge, SQS, S3, and fixture-backed contract tests on the OpenAPI boundary.
+- **64%** higher transformation throughput after raising bounded concurrency from 16 to 20 workers. PostgreSQL CPU and I/O stayed flat or fell.
+- **17x** faster vector feed pages, from 238 seconds to 13.7 seconds, with **98.2%** recall@10 against a **98.3%** full-precision baseline.
+- A reference load projected at **30.2 minutes** finished in **2 minutes 34 seconds**.
+- Recurring external fetches fell **43%**. An invalid or stale change signal still triggers an alarmed full sweep.
 
-**Internship, Jun 2025 to Sep 2025.** React and TypeScript UI, plus **15+** frontend and backend production fixes.
+<details>
+<summary>Notes for someone who wants the design, not only the numbers</summary>
 
-**[ResumeCanvas](https://github.com/swarajreddy10/Resume_Canvas).** Next.js, React, TypeScript, MongoDB. 129 tests, 220 assertions, eight AI-assisted features, five templates, PDF export. Live at [resumecanvas.live](https://www.resumecanvas.live/).
+- Hybrid retrieval uses semantic search, PostgreSQL full-text search, structured skill identity, and query relevance, then merges the lists with Reciprocal Rank Fusion. If one path is unavailable, the query continues with the signals that remain.
+- Job vectors and seeker vectors share one versioned space. The Qwen3 embedding model runs through Cloudflare's OpenAI-compatible Workers AI gateway, and the vectors sit in pgvector.
+- The feed is replay-safe: durable cursors, idempotent upserts, tombstones, and a complete-set reconciliation when a removal event is missed.
+- The 17x feed change came from half-precision HNSW: a `halfvec` expression index, plus removal of the redundant full-precision index. Recall stayed at the figures above.
+- AWS delivery is ECS, RDS PostgreSQL, S3, EventBridge Scheduler, SQS with a dead-letter queue, Service Connect, CloudWatch, Terraform, Docker, and GitHub Actions with OIDC. Third-party Actions are pinned to commit SHAs.
+- Outbound ingestion caps response size, accepts only globally reachable addresses, paces requests, isolates a failing source family, and raises a failure-aware CloudWatch alarm.
 
-**[Portfolio](https://swarajreddy10.github.io/).** Next.js and React. Lighthouse 100 on accessibility, best practices, and SEO.
+</details>
+
+## Osulo, completed
+
+Osulo ingested healthcare documents and turned unstructured clinical content into structured fields. I was the primary contributor on two Go services: document ingestion, and clinical-document extraction.
+
+The stages were separate on purpose: secure upload, sanitization, model-assisted extraction, human review, then publication. Vertex AI Gemini and Azure OpenAI GPT mapped sanitized prescriptions and laboratory reports into schema-validated fields, and the source lineage stayed attached for review.
+
+In dev, ingestion took **52 seconds**, extraction took **48 seconds**, and the handoff between the services took **200ms**. End to end, a document took **100.6 seconds**. Fixture-backed contract tests guarded the OpenAPI and event boundary. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
+
+## Open and worth a look
+
+**[ResumeCanvas](https://www.resumecanvas.live/)** is the product you can click through. Next.js, React, TypeScript, and MongoDB. Coverage is **95.2%** across 129 tests and 220 assertions. Cached responses stay under **100ms**, and 7 indexes cut query load by **60%**. It has 8 AI-assisted features, 5 templates, PDF export, and public sharing. [Source](https://github.com/swarajreddy10/Resume_Canvas).
+
+**[Portfolio](https://swarajreddy10.github.io/)** is Next.js and React. Lighthouse scores 100 on accessibility, best practices, and SEO, and 99 on desktop performance. [Source](https://github.com/swarajreddy10/swarajreddy10.github.io).
+
+**Writing**, when a shift is worth pinning down:
+
+- [Why enterprise AI is moving from chat interfaces to workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6)
+- [Why JavaScript runtimes are being rethought, from Node.js to Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
+
+The internship, from Jun 2025 to Sep 2025, was reusable React and TypeScript UI, plus **15+** frontend and backend production fixes traced with Chrome DevTools and server logs.
+
+## How a change gets to production
+
+I write the decision down: the alternative, the constraint, and the check that will show whether it worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure should stay visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
+
+AI shortens the research and the draft. A change still waits on the primary documentation, the tests, the benchmark, peer review, and what production actually recorded.
 
 ## Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=go,ts,nodejs,react,nextjs,postgres,mongodb,aws,docker,terraform,githubactions&theme=dark" alt="Go, TypeScript, Node.js, React, Next.js, PostgreSQL, MongoDB, AWS, Docker, Terraform, GitHub Actions">
+<img src="https://skillicons.dev/icons?i=go,ts,react,nextjs,python,postgres,mongodb,aws,docker,terraform,githubactions&theme=dark" alt="Go, TypeScript, React, Next.js, Python, PostgreSQL, MongoDB, AWS, Docker, Terraform, GitHub Actions">
 
 </div>
 
-Go · TypeScript · Node.js · React · Next.js · Python · PostgreSQL · MongoDB · AWS · Docker · Terraform · GitHub Actions
+Go · TypeScript · SQL · Python · Fastify · React · Next.js · PostgreSQL · pgvector · MongoDB · AWS · Terraform · Docker · GitHub Actions
 
 ## Background
 
 **GITAM University**, B.Tech in Computer Science, 2021 to 2025, CGPA 8.2/10.
 
 [IBM Full Stack Software Developer](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url) · [AWS Cloud Foundations and Cloud Architecting](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url) · [MongoDB Python Developer Path](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf)
-
-[Enterprise AI workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6) · [Node.js and Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
 
 <div align="center">
 
