@@ -10,15 +10,9 @@ Backend, search, and applied AI · Hyderabad
 
 </div>
 
-I work so the people around a change can see it. I sit with stakeholders and peers early, write the trade-off where a reviewer can follow it, and take review comments into the next pass.
+I'm Swaraj, a software engineer in Hyderabad. I want the people on a change to see it, so I talk with them early, write the trade-off where a reviewer can follow it, and stay with the work until production shows what it did.
 
-I stay with a problem from the first framing until production shows what it did. When the work moves, I move with it, across the interface, the service, the data, and the cloud path. I would rather an unfinished change stay visible than look finished.
-
-## Work with me
-
-Open to backend, full-stack, platform, and applied AI roles. Remote, hybrid, or on-site.
-
-[Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough. I can go deep on retrieval and embeddings, or a backend change that has to hold while the database is already busy.
+I'm open to backend, full-stack, platform, and applied AI roles, remote, hybrid, or on-site. Write if you are hiring, if you want a second look at a design, or if you just want to say hello. [Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough.
 
 ## SpotMyJob
 
@@ -40,7 +34,7 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 - Recurring external fetches fell **43%**. An invalid or stale change signal still triggers an alarmed full sweep.
 
 <details>
-<summary>Notes for someone who wants the design, not only the numbers</summary>
+<summary>Design notes</summary>
 
 - Hybrid retrieval uses semantic search, PostgreSQL full-text search, structured skill identity, and query relevance, then merges the lists with Reciprocal Rank Fusion. If one path is unavailable, the query continues with the signals that remain.
 - The feed is replay-safe: durable cursors, idempotent upserts, tombstones, and a complete-set reconciliation when a removal event is missed.
@@ -52,15 +46,15 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 
 ## Osulo
 
-Primary contributor on two Go services for document ingestion and clinical-document extraction. Vertex AI Gemini and Azure OpenAI GPT proposed fields from sanitized prescriptions and laboratory reports. Schema checks and source lineage sat in front of review. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
+Primary contributor on two Go services for document ingestion and clinical-document extraction. Vertex AI Gemini and Azure OpenAI GPT proposed fields from sanitized prescriptions and laboratory reports. Schema checks kept each field tied to its source for review. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
 
-## Open and worth a look
+## Public work
 
 **[ResumeCanvas](https://www.resumecanvas.live/)** is the product you can click through. Next.js, React, TypeScript, and MongoDB. Coverage is **95.2%** across 129 tests and 220 assertions. Cached responses stay under **100ms**, and 7 indexes cut query load by **60%**. Eight AI features call Groq's Llama 3.3 70B, including ATS scoring, keyword analysis, cover-letter generation, and job matching, with 5 templates, PDF export, and public sharing. [Source](https://github.com/swarajreddy10/Resume_Canvas).
 
 **[Portfolio](https://swarajreddy10.github.io/)** is Next.js and React. Lighthouse scores 100 on accessibility, best practices, and SEO, and 99 on desktop performance. [Source](https://github.com/swarajreddy10/swarajreddy10.github.io).
 
-**Writing**, when a shift is worth pinning down:
+**Writing**
 
 - [Why enterprise AI is moving from chat interfaces to workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6)
 - [Why JavaScript runtimes are being rethought, from Node.js to Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
@@ -69,9 +63,9 @@ The internship, from Jun 2025 to Sep 2025, was reusable React and TypeScript UI,
 
 ## How a change gets to production
 
-I write the decision down: the alternative, the constraint, and the check that will show whether it worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure should stay visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
+I write down the alternative, the constraint, and how we will know the change worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure stays visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
 
-AI assists the research, the implementation options, the debugging, and the review. The decision stays mine. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
+AI helps with research, options, debugging, and review. I still make the call. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## Stack
 
