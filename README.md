@@ -12,13 +12,17 @@ Backend, search, and applied AI · Hyderabad
 
 I build the path from a messy source to one record someone can trust, then to search that still answers when one signal is missing. That work is SpotMyJob: Go services for source governance and job transformation, a TypeScript search service, and versioned embeddings that feed hybrid retrieval.
 
-1+ year in production. The three months before that were a React and TypeScript internship on the same team. Company repositories are private, so this page is the public case study. The projects and essays below are open.
+1+ year in production. The three months before that were a React and TypeScript internship on the same team.
 
 ## Work with me
 
 Open to backend, full-stack, platform, and applied AI roles. Remote, hybrid, or on-site.
 
-[Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough. I can go deep on retrieval and embeddings, document extraction that stops for human review, or a backend change that has to hold while the database is already busy.
+[Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough. I can go deep on retrieval and embeddings, or a backend change that has to hold while the database is already busy.
+
+## AI-assisted development
+
+AI assists research, implementation options, debugging, and review. I still own the decision. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## SpotMyJob
 
@@ -50,13 +54,9 @@ I am the primary contributor on the two Go backends. I am a major contributor on
 
 </details>
 
-## Osulo, completed
+## Osulo
 
-Osulo ingested healthcare documents and turned unstructured clinical content into structured fields. I was the primary contributor on two Go services: document ingestion, and clinical-document extraction.
-
-The stages were separate on purpose: secure upload, sanitization, model-assisted extraction, human review, then publication. Vertex AI Gemini and Azure OpenAI GPT proposed fields from sanitized prescriptions and laboratory reports. Only schema-validated fields moved forward, and the source lineage stayed attached for review.
-
-In dev, ingestion took **52 seconds**, extraction took **48 seconds**, and the handoff between the services took **200ms**. End to end, a document took **100.6 seconds**. Fixture-backed contract tests guarded the OpenAPI and event boundary. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
+Primary contributor on two Go services for document ingestion and clinical-document extraction. Vertex AI Gemini and Azure OpenAI GPT proposed fields from sanitized prescriptions and laboratory reports. Schema checks and source lineage sat in front of review. The path ran on Step Functions, EventBridge, SQS, S3, PostgreSQL, Terraform, Docker, and GitHub Actions.
 
 ## Open and worth a look
 
@@ -74,8 +74,6 @@ The internship, from Jun 2025 to Sep 2025, was reusable React and TypeScript UI,
 ## How a change gets to production
 
 I write the decision down: the alternative, the constraint, and the check that will show whether it worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure should stay visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
-
-AI assists research, implementation options, debugging, and review. I still own the decision. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## Stack
 
