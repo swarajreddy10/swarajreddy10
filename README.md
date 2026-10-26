@@ -10,19 +10,15 @@ Backend, search, and applied AI · Hyderabad
 
 </div>
 
-I build the path from a messy source to one record someone can trust, then to search that still answers when one signal is missing. That work is SpotMyJob: Go services for source governance and job transformation, a TypeScript search service, and versioned embeddings that feed hybrid retrieval.
+I work so the people around a change can see it. I sit with stakeholders and peers early, write the trade-off where a reviewer can follow it, and take review comments into the next pass.
 
-1+ year in production. The three months before that were a React and TypeScript internship on the same team.
+I stay with a problem from the first framing until production shows what it did. When the work moves, I move with it, across the interface, the service, the data, and the cloud path. I would rather an unfinished change stay visible than look finished.
 
 ## Work with me
 
 Open to backend, full-stack, platform, and applied AI roles. Remote, hybrid, or on-site.
 
 [Email](mailto:swarajchandra22@gmail.com) or [LinkedIn](https://www.linkedin.com/in/swarajreddy/) is enough. I can go deep on retrieval and embeddings, or a backend change that has to hold while the database is already busy.
-
-## AI-assisted development
-
-AI assists research, implementation options, debugging, and review. I still own the decision. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## SpotMyJob
 
@@ -35,7 +31,7 @@ flowchart LR
   C --> D[Seeker search]
 ```
 
-I am the primary contributor on the two Go backends. I am a major contributor on the TypeScript search service, including ingestion, location, skill, and ranking.
+I am the primary contributor on the two Go backends. I am a major contributor on the TypeScript search service, including ingestion, location, skill, and ranking. This is 1+ year in production, after a 3-month React and TypeScript internship on the same team.
 
 - **64%** higher transformation throughput after raising bounded concurrency from 16 to 20 workers. PostgreSQL CPU and I/O stayed flat or fell.
 - **17x** faster vector feed pages, from 238 seconds to 13.7 seconds, with **98.2%** recall@10 against a **98.3%** full-precision baseline.
@@ -74,6 +70,8 @@ The internship, from Jun 2025 to Sep 2025, was reusable React and TypeScript UI,
 ## How a change gets to production
 
 I write the decision down: the alternative, the constraint, and the check that will show whether it worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure should stay visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
+
+AI assists the research, the implementation options, the debugging, and the review. The decision stays mine. A change ships only after the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the AWS execution history recorded.
 
 ## Stack
 
