@@ -8,9 +8,9 @@
 
 </div>
 
-Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. At Dexaminds I started and own the two Go services behind SpotMyJob's job-data pipeline, and I measure before I change anything: proving a slow stage was waiting on round trips, not the database, let me raise its throughput 64%.
+Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. At Dexaminds I started and own the two Go services behind SpotMyJob's job-data pipeline, and I size changes on measurement, not assumption: re-sizing a Go stage's concurrency on measured database load raised its throughput 64% with no new infrastructure.
 
-I work with Claude, Codex, and Cursor every day; nothing ships until tests, benchmarks, and runtime metrics agree.
+Before I write code, I compare the options against official documentation and the real workload, and I write the decision down. I work with Claude, Codex, and Cursor every day; nothing ships until tests, benchmarks, and runtime metrics agree.
 
 I'm open to backend, full-stack, platform, and applied AI roles, remote, hybrid, or on-site. If you are hiring, want a second look at a design, or just want to say hello, write to [swarajchandra22@gmail.com](mailto:swarajchandra22@gmail.com) or message me on LinkedIn.
 
@@ -34,7 +34,8 @@ flowchart LR
 
 I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
 
-- **64%** higher transformation throughput with no new infrastructure. Peak database CPU fell from **99.7%** to **65%** at the same time, which confirmed the stage had been waiting on round trips.
+- **64%** higher transformation throughput with no new infrastructure. The worker count had been justified by eight server CPUs when QA has two; I re-sized it on measured load, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
+- **84% to 1.1%** job-board failures in one day. An unpaced sweep lost most boards to fast 403s; I split the error counts, ruled out User-Agent blocking, traced it to a per-IP edge rate limit, and shipped pacing that afternoon. Adaptive pacing later held at one push-back in 328,452 fetches.
 - **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I found a full-precision index no query read but every write still paid for, moved HNSW to a half-precision index, and kept **98.2%** recall@10 against **98.3%**.
 - **43%** fewer recurring external fetches by reading only the boards that could have changed. A missing or stale change signal falls back to an alarmed full sweep.
 - Ranked matching went from **728 ms** to **68 ms** p50, and now scores every eligible job instead of the top 200, measured on a local copy of QA data.
@@ -56,6 +57,7 @@ I started and own the two Go services, discovery and processing. I am a core con
 
 From April to June 2026 I built Osulo's two Go services: document ingestion, and the Clinical Document Intelligence Service that turned prescriptions and laboratory reports into structured clinical fields.
 
+- Before the first Go commit, I compared six LLM endpoints on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against 34 official AWS and vendor sources.
 - Files uploaded straight to S3 through signed POST policies, then passed quarantine, GuardDuty malware scanning, promotion to a trusted bucket, and image normalization before EventBridge and SQS handed them to extraction.
 - Extraction ran as a Step Functions workflow over page chunks. Vertex AI Gemini, Azure OpenAI GPT, and Amazon Bedrock sat behind one provider-neutral gate that checked structure, schema, and a 0.85 confidence bar, and sent uncertain fields to human review.
 - A multi-page lab report ran from upload to structured result in **62 s**, with extraction at a **10.6 s** p50 (**15.2 s** p95) and a **0.2 s** handoff between services.
@@ -78,9 +80,11 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 
 ## How I work
 
-I write down the alternative, the constraint, and how we will know the change worked. Concurrency and batch size come from a measurement when CPU, memory, or the connection pool is already the limit. A failure stays visible. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
-
-I use Claude, Codex, and Cursor for research, options, debugging, and review, and I set up Claude Code for both Go services with project rules and hooks that block a commit until its checks pass. I still make the call. A change ships on the primary documentation, the tests, the benchmark, peer review, and what CloudWatch or the execution history recorded.
+- **Research before code.** I set the decision method SpotMyJob's two Go services follow: every decision record cites official documentation with the date it was checked, separates confirmed facts from inference, and names the trigger that must fire before a component is built.
+- **Options measured on the real workload.** Ashby became our second job source only after I compared its published fields with Greenhouse over 208 live postings and sized it on a reproducible sample; it shipped the same day without touching shared code. Dictionary-linked skill extraction was chosen over four alternatives, including an LLM per job and embeddings, on a 104-job benchmark, and on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
+- **Data overrules the model.** An LLM judge piloted on a held-out, blind-labelled set under a $5 budget missed the bar set before the run, so the rules-based path stayed.
+- **Fix the cause, keep failures visible.** A missing or stale change signal triggers an alarmed full sweep, and a feed release that regresses is refused, instead of a silent fallback. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
+- **AI-assisted, human-decided.** I use Claude, Codex, and Cursor across research, implementation, debugging, and review, and set up Claude Code for both Go services with project rules and hooks that block a commit until its checks pass. A change ships on the primary documentation, the tests, the benchmark, peer review, and what CloudWatch recorded.
 
 ## Technical skills
 
