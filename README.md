@@ -35,7 +35,7 @@ flowchart LR
 I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
 
 - **64%** higher transformation throughput with no new infrastructure. I re-sized the worker count on measured load instead of an assumed CPU count, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
-- **84% to 1.1%** job-board failures in one day. When the first QA sweep lost most boards to 403s, I traced it to a per-IP edge rate limit and shipped pacing the same afternoon; boards that answered rose from **16%** to **98.9%**.
+- **88%** fewer requests per Greenhouse sweep. Greenhouse documents pay bands only on its per-job endpoint; I measured the list endpoint returning the same data, compared it field by field, and dropped the per-job calls, keeping them as an automatic fallback. With ETag revalidation, **83%** of board reads now come back 304 Not Modified.
 - **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I moved HNSW to a half-precision index (**98.2%** recall@10 against **98.3%**), then dropped the full-precision index every write still maintained.
 - **About 40%** fewer Workable board reads per run: boards serving a job are read every run and empty ones rotate every two days, which also removed a third-party feed dependency.
 - Ranked matching went from **728 ms** to **68 ms** p50 at its September 2026 release, scoring every eligible job instead of the top 200, measured on a local copy of QA data.
