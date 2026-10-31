@@ -34,8 +34,8 @@ flowchart LR
 
 I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
 
-- **64%** higher transformation throughput with no new infrastructure. The worker count had been justified by eight server CPUs when QA has two; I re-sized it on measured load, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
-- **84% to 1.1%** job-board failures in one day. An unpaced sweep lost most boards to fast 403s; I split the error counts, ruled out User-Agent blocking, traced it to a per-IP edge rate limit, and shipped pacing that afternoon. Adaptive pacing later held at one push-back in 328,452 fetches.
+- **64%** higher transformation throughput with no new infrastructure. I re-sized the worker count on measured load instead of an assumed CPU count, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
+- **84% to 1.1%** job-board failures in one day. I traced the losses to a per-IP edge rate limit and shipped pacing the same afternoon; adaptive pacing has since held push-backs at **0.0003%** of fetches.
 - **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I found a full-precision index no query read but every write still paid for, moved HNSW to a half-precision index, and kept **98.2%** recall@10 against **98.3%**.
 - **43%** fewer recurring external fetches by reading only the boards that could have changed. A missing or stale change signal falls back to an alarmed full sweep.
 - Ranked matching went from **728 ms** to **68 ms** p50, and now scores every eligible job instead of the top 200, measured on a local copy of QA data.
@@ -57,7 +57,7 @@ I started and own the two Go services, discovery and processing. I am a core con
 
 From April to June 2026 I built Osulo's two Go services: document ingestion, and the Clinical Document Intelligence Service that turned prescriptions and laboratory reports into structured clinical fields.
 
-- Before the first Go commit, I compared six LLM endpoints on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against 34 official AWS and vendor sources.
+- Before the first Go commit, I compared six LLM endpoints on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against official AWS and vendor documentation.
 - Files uploaded straight to S3 through signed POST policies, then passed quarantine, GuardDuty malware scanning, promotion to a trusted bucket, and image normalization before EventBridge and SQS handed them to extraction.
 - Extraction ran as a Step Functions workflow over page chunks. Vertex AI Gemini, Azure OpenAI GPT, and Amazon Bedrock sat behind one provider-neutral gate that checked structure, schema, and a 0.85 confidence bar, and sent uncertain fields to human review.
 - A multi-page lab report ran from upload to structured result in **62 s**, with extraction at a **10.6 s** p50 (**15.2 s** p95) and a **0.2 s** handoff between services.
@@ -80,9 +80,9 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 
 ## How I work
 
-- **Research before code.** I set the decision method SpotMyJob's two Go services follow: every decision record cites official documentation with the date it was checked, separates confirmed facts from inference, and names the trigger that must fire before a component is built.
-- **Options measured on the real workload.** Ashby became our second job source only after I compared its published fields with Greenhouse over 208 live postings and sized it on a reproducible sample; it shipped the same day without touching shared code. Dictionary-linked skill extraction was chosen over four alternatives, including an LLM per job and embeddings, on a 104-job benchmark, and on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
-- **Data overrules the model.** An LLM judge piloted on a held-out, blind-labelled set under a $5 budget missed the bar set before the run, so the rules-based path stayed.
+- **Research before code, from day one.** SpotMyJob started with my sourcing research: feasibility, competitor, and data-rights studies consolidated into a proposal covering connector economics, source rights, and operating compliance, which the first Go service then implemented. Every decision since cites official documentation with the date it was checked, separates confirmed facts from inference, and names the trigger that must fire before a component is built.
+- **Options measured on the real workload.** Ashby became a second job source only after I compared its published fields with Greenhouse on live postings and sized it on a reproducible sample. Skill extraction was chosen over alternatives that included an LLM per job and embeddings, on a benchmark; on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
+- **Data overrules the model.** An LLM judge piloted on a held-out, blind-labelled set missed the bar set before the run, so the rules-based path stayed.
 - **Fix the cause, keep failures visible.** A missing or stale change signal triggers an alarmed full sweep, and a feed release that regresses is refused, instead of a silent fallback. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
 - **AI-assisted, human-decided.** I use Claude, Codex, and Cursor across research, implementation, debugging, and review, and set up Claude Code for both Go services with project rules and hooks that block a commit until its checks pass. A change ships on the primary documentation, the tests, the benchmark, peer review, and what CloudWatch recorded.
 
