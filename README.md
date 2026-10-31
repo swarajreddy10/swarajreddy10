@@ -28,16 +28,16 @@ flowchart LR
   accDescr: Employer sources flow into discovery, then processing, then search, which serves the seeker web app. Discovery and processing are Go services; search is a TypeScript service.
   A[Employer sources] --> B[Discovery<br/>source governance, Go]
   B --> C[Processing<br/>job transformation, Go]
-  C --> D[Search<br/>job-engine, TypeScript]
+  C --> D[Search<br/>TypeScript service]
   D --> E[Seeker web app, React]
 ```
 
 I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
 
 - **64%** higher transformation throughput with no new infrastructure. I re-sized the worker count on measured load instead of an assumed CPU count, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
-- **88%** fewer requests per Greenhouse sweep. Greenhouse documents pay bands only on its per-job endpoint; I measured the list endpoint returning the same data, compared it field by field, and dropped the per-job calls, keeping them as an automatic fallback. With ETag revalidation, **83%** of board reads now come back 304 Not Modified.
+- **88%** fewer requests per job-board sweep. The vendor documents some fields only on its per-item endpoint; I measured the list endpoint returning the same data, compared the two field by field, and dropped the per-item calls, keeping them as an automatic fallback. With ETag revalidation, **83%** of board reads now come back 304 Not Modified.
 - **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I moved HNSW to a half-precision index (**98.2%** recall@10 against **98.3%**), then dropped the full-precision index every write still maintained.
-- **About 40%** fewer Workable board reads per run: boards serving a job are read every run and empty ones rotate every two days, which also removed a third-party feed dependency.
+- **About 40%** fewer reads per run on a job-board family that issues no ETags: boards serving a job are read every run and empty ones rotate every two days, which also removed a third-party feed dependency.
 - Ranked matching went from **728 ms** to **68 ms** p50 at its September 2026 release, scoring every eligible job instead of the top 200, measured on a local copy of QA data.
 - A postal reference load projected at **30.2 minutes** finished in **2 minutes 34 seconds** with PostgreSQL `COPY` and one set-based merge.
 
@@ -46,20 +46,20 @@ I started and own the two Go services, discovery and processing. I am a core con
 
 - Matching is one keyset-paged SQL score over every job that passes the seeker's pick and filters. Keyword search reads a GIN-indexed whole-word column with catalog-aware matching instead of a `LIKE` scan of every row.
 - The feed is replay-safe: durable cursors, idempotent upserts, tombstones, and, per source family, a complete-set reconciliation that removes jobs missing from the producer's served set. I rewrote that cleanup as a hash anti-join after measuring a latent 175-second generic-plan path; under the same forced plan it ran in 162 ms.
-- Job and seeker text share one versioned vector space in pgvector. I built the embedding client for Cloudflare Workers AI: Qwen3 vectors, 1,024 dimensions checked on every response, and jittered retries on transient errors only.
+- Job and seeker text share one versioned vector space in pgvector. I built the embedding client: dimensions checked on every response, and jittered retries on transient errors only.
 - The discovery service validates every address at dial time across IPv4, IPv6, and NAT64, which closes SSRF and DNS rebinding, and it caps response size, paces requests, and isolates a failing source family. The processing service contacts only allowlisted ATS origins, with redirects held to that list and the same per-host pacing.
 - AWS delivery is ECS, RDS PostgreSQL, S3, EventBridge Scheduler, SQS with dead-letter queues, Service Connect, CloudWatch, Terraform, Docker, and GitHub Actions with OIDC. The Go services' Actions references are pinned to commit SHAs, with a CI guard that keeps them pinned.
 - On the React side: "Did you mean" search that suggests and never auto-applies, draft-then-apply filters, onboarding gated on the answers a match needs, match-score display, and a location picker, each shipped with its Fastify API.
 
 </details>
 
-### Osulo: patient-care document intelligence
+### Healthcare document intelligence (client project)
 
-From April to June 2026 I built Osulo's two Go services: document ingestion, and the Clinical Document Intelligence Service, which classified prescriptions and laboratory reports and extracted structured fields, with schema validation for lab reports. Both ran in a development environment.
+From April to June 2026 I built two Go services for a client's healthcare platform: document ingestion, and a clinical document intelligence service that classified prescriptions and laboratory reports and extracted structured fields, with schema validation for lab reports. Both ran in a development environment.
 
-- Before the first Go commit, I compared six LLM endpoints on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against official AWS and vendor documentation.
-- Files uploaded straight to S3 through signed POST policies, then passed quarantine, GuardDuty malware scanning, promotion to a trusted bucket, and image normalization before EventBridge and SQS handed them to extraction.
-- Extraction ran as a Step Functions workflow over page chunks. I built Gemini API, Vertex AI, Azure OpenAI, and Amazon Bedrock adapters behind one provider-neutral gate that checked structure, the lab-report schema, and a 0.85 classification-confidence bar, and flagged uncertain documents for human review. The development pipeline ran Gemini 2.5 Flash-Lite.
+- Before the first Go commit, I compared LLM providers on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against official AWS and vendor documentation.
+- Uploads went straight to S3, were malware-scanned in quarantine and promoted only when clean, and were normalized before EventBridge and SQS handed them to extraction.
+- Extraction ran as a Step Functions workflow over page chunks. I built Gemini API, Vertex AI, Azure OpenAI, and Amazon Bedrock adapters behind one provider-neutral gate that checked structure, schema, and a confidence bar, and flagged uncertain documents for human review.
 - A multi-page lab report went from malware-cleared file to structured result in **62 s**, with a **0.2 s** handoff between services; the extraction workflow's p50 was **10.6 s** over nine development runs.
 - Both services deployed independently through versioned events, idempotent requests, an event outbox in the extraction service, SQS dead-letter queues, and stale-job reconcilers, on PostgreSQL, Terraform, Docker, and GitHub Actions.
 
@@ -81,7 +81,7 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 ## How I work
 
 - **Research before code, from day one.** SpotMyJob's job-source pipeline started with my research: feasibility, competitor, and data-rights studies consolidated into a proposal covering connector economics, source rights, and operating compliance, which the first Go service then implemented. My decision records cite official documentation with the date it was checked, separates confirmed facts from inference, and names the trigger that must fire before a component is built.
-- **Options measured on the real workload.** Ashby became a second job source only after I compared its published fields with Greenhouse on live postings and sized it on a reproducible sample. Skill extraction was chosen over alternatives that included an LLM per job and embeddings, on a benchmark; on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
+- **Options measured on the real workload.** A second job-board family was added only after I compared its published fields with the first on live postings and sized it on a reproducible sample. Skill extraction was chosen over alternatives that included an LLM per job and embeddings, on a benchmark; on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
 - **Data overrules the model.** An LLM judge piloted on a held-out labelled set, with rater agreement measured, missed the bar set before the run, so the rules-based path stayed.
 - **Fix the cause, keep failures visible.** A feed release that regresses against the last one is refused instead of published, and failed runs raise CloudWatch alarms rather than passing silently. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
 - **AI-assisted, human-decided.** I use Claude Code, Codex, and Cursor across research, implementation, debugging, and review, and set up Claude Code for both Go services with project rules and hooks that block a commit until its checks pass. A change merges on the primary documentation, the tests, the benchmark, and peer review; after deploy, I check what CloudWatch recorded.
