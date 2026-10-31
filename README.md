@@ -8,7 +8,7 @@
 
 </div>
 
-Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. I research before I code, size changes on measurement, and work daily with Claude Code, Codex, and Cursor, checking changes against tests, benchmarks, and runtime metrics.
+Hello, I'm Swaraj. I build backend systems in Go, PostgreSQL, and AWS, with React on top. I research before I build and measure before I change, and I work daily with Claude Code, Codex, and Cursor, checking their output with tests and benchmarks.
 
 Open to backend, full-stack, platform, and applied AI roles: remote, hybrid, or on-site. Write to [swarajchandra22@gmail.com](mailto:swarajchandra22@gmail.com).
 
