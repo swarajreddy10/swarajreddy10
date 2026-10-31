@@ -35,7 +35,7 @@ flowchart LR
 I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
 
 - **64%** higher transformation throughput with no new infrastructure. I re-sized the worker count on measured load instead of an assumed CPU count, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
-- **84% to 1.1%** job-board failures in one day. I traced the losses to a per-IP edge rate limit and shipped pacing the same afternoon; adaptive pacing has since held push-backs at **0.0003%** of fetches.
+- **84% to 1.1%** job-board failures in one day. I traced the losses to a per-IP edge rate limit and shipped pacing the same afternoon; boards returning real data went from **16%** to **98.9%**.
 - **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I found a full-precision index no query read but every write still paid for, moved HNSW to a half-precision index, and kept **98.2%** recall@10 against **98.3%**.
 - **43%** fewer recurring external fetches by reading only the boards that could have changed. A missing or stale change signal falls back to an alarmed full sweep.
 - Ranked matching went from **728 ms** to **68 ms** p50, and now scores every eligible job instead of the top 200, measured on a local copy of QA data.
