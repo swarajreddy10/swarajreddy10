@@ -2,19 +2,19 @@
 
 # Swaraj Chandra Reddy M
 
-**Software Engineer at [Dexaminds](https://dexaminds.com/)** · Backend · Full-Stack · Applied AI · Hyderabad, India
+**Software Engineer at [DexaMinds](https://dexaminds.com/)** · Backend · Full-Stack · Applied AI · Hyderabad, India
 
 [Portfolio](https://swarajreddy10.github.io/) · [Résumé (PDF)](https://swarajreddy10.github.io/Swarajreddy_Software_Engineer.pdf) · [LinkedIn](https://linkedin.com/in/swarajreddy) · [Email](mailto:swarajchandra22@gmail.com) · [Medium](https://medium.com/@swaraj.c)
 
 </div>
 
-Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. At Dexaminds I started and own the two Go services behind SpotMyJob's job-data pipeline, and I size changes on measurement, not assumption: re-sizing a Go stage's concurrency on measured database load raised its throughput 64% with no new infrastructure.
+Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. At DexaMinds I started and own the two Go services behind SpotMyJob's job-data pipeline, and I size changes on measurement, not assumption: re-sizing a Go stage's concurrency on measured database load raised its throughput 64% with no new infrastructure.
 
 Before I write code, I compare the options against official documentation and the real workload, and I write the decision down. I work with Claude Code, Codex, and Cursor every day; a change merges on passing tests and benchmarks, and I check it against runtime metrics once it is deployed.
 
 I'm open to backend, full-stack, platform, and applied AI roles, remote, hybrid, or on-site. If you are hiring, want a second look at a design, or just want to say hello, write to [swarajchandra22@gmail.com](mailto:swarajchandra22@gmail.com) or message me on LinkedIn.
 
-## Work at Dexaminds
+## Work at DexaMinds
 
 Software Engineer, Sep 2025 to present, after a Software Engineer internship from Jun to Sep 2025.
 
@@ -69,7 +69,7 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 
 ## Personal projects
 
-**[ResumeCanvas](https://www.resumecanvas.live/)**, an AI resume builder you can click through. Next.js 16, React 19, TypeScript, MongoDB, and Puppeteer. AI features on Groq's Llama 3.3 70B cover resume review, keyword analysis, bullet and cover-letter generation, interview questions, and job matching, alongside 5 templates, PDF export, and public sharing. MongoDB has compound indexes on the per-user read paths, and **118** unit and performance tests reach **81.6%** line coverage of the modules under test. [ResumeCanvas source code](https://github.com/swarajreddy10/Resume_Canvas).
+**[ResumeCanvas](https://resumecanvas.vercel.app/)**, an AI resume builder you can click through. Next.js 16, React 19, TypeScript, MongoDB, and Puppeteer. AI features on Groq's Llama 3.3 70B cover resume review, keyword analysis, bullet and cover-letter generation, interview questions, and job matching, alongside 5 templates, PDF export, and public sharing. MongoDB has compound indexes on the per-user read paths, and **118** unit and performance tests reach **81.6%** line coverage of the modules under test. [ResumeCanvas source code](https://github.com/swarajreddy10/Resume_Canvas).
 
 **[Portfolio site](https://swarajreddy10.github.io/)**, built with Next.js 16 and React 19. On a local production build in October 2026, Lighthouse scored 100 on accessibility, best practices, and SEO, with performance at 99 on desktop and 84 on mobile, and axe-core reported zero automated violations. [Portfolio source code](https://github.com/swarajreddy10/swarajreddy10.github.io).
 
