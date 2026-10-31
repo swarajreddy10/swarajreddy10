@@ -97,8 +97,9 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 
 </div>
 
-- **Languages:** Go, TypeScript, SQL, Python
-- **Backend and data:** REST APIs, Fastify, PostgreSQL, pgvector, MongoDB
+- **Languages:** Go (Golang), TypeScript, SQL, Python
+- **Backend and data:** microservices, REST APIs, event-driven architecture, Node.js with Fastify, PostgreSQL, pgvector, MongoDB
+- **AI engineering:** LLM integration (Vertex AI, Azure OpenAI, Amazon Bedrock), Claude Code, Codex, Cursor
 - **Cloud and delivery:** AWS (ECS, RDS, S3, EventBridge, SQS, Step Functions, CloudWatch), Terraform, Docker, GitHub Actions
 - **Frontend:** React, Next.js, TanStack Query, React Router, Tailwind CSS, Vite
 - **Testing:** unit, integration, and contract tests; Go race tests; Vitest with Testing Library
