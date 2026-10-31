@@ -52,7 +52,7 @@ Two Go services for a client's healthcare platform: document ingestion and LLM e
 ## Projects and writing
 
 - **[ResumeCanvas](https://resumecanvas.vercel.app/)**: AI resume builder on Next.js 16 and Groq's Llama 3.3 70B, with 5 templates and PDF export; 118 tests at 81.6% line coverage. [ResumeCanvas source](https://github.com/swarajreddy10/Resume_Canvas)
-- **[This portfolio](https://swarajreddy10.github.io/)**: Lighthouse 100 for accessibility, best practices, and SEO. [Portfolio source](https://github.com/swarajreddy10/swarajreddy10.github.io)
+- **[This portfolio](https://swarajreddy10.github.io/)**: Lighthouse 100 for accessibility, best practices, and SEO, and 94 for mobile performance. [Portfolio source](https://github.com/swarajreddy10/swarajreddy10.github.io)
 - **Medium:** [Why Enterprise AI Is Moving From Chat Interfaces to Workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6) · [Why JavaScript Runtimes Are Being Rethought](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
 
 ## Skills
