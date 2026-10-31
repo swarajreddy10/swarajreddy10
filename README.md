@@ -8,85 +8,54 @@
 
 </div>
 
-Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. At DexaMinds I started and own the two Go services behind SpotMyJob's job-data pipeline, and I size changes on measurement, not assumption: re-sizing a Go stage's concurrency on measured database load raised its throughput 64% with no new infrastructure.
+Hello, I'm Swaraj. I build backend systems that stay correct and fast on real data: Go services, PostgreSQL, and scheduled AWS pipelines, with React on top. I research before I code, size changes on measurement, and work daily with Claude Code, Codex, and Cursor, checking changes against tests, benchmarks, and runtime metrics.
 
-Before I write code, I compare the options against official documentation and the real workload, and I write the decision down. I work with Claude Code, Codex, and Cursor every day; a change merges on passing tests and benchmarks, and I check it against runtime metrics once it is deployed.
-
-I'm open to backend, full-stack, platform, and applied AI roles, remote, hybrid, or on-site. If you are hiring, want a second look at a design, or just want to say hello, write to [swarajchandra22@gmail.com](mailto:swarajchandra22@gmail.com) or message me on LinkedIn.
+Open to backend, full-stack, platform, and applied AI roles: remote, hybrid, or on-site. Write to [swarajchandra22@gmail.com](mailto:swarajchandra22@gmail.com).
 
 ## Work at DexaMinds
 
-Software Engineer, Sep 2025 to present, after a Software Engineer internship from Jun to Sep 2025.
+Software Engineer since Sep 2025, after a React and TypeScript internship from Jun to Sep 2025.
 
 ### SpotMyJob: job intelligence and matching platform
 
-SpotMyJob turns jobs from governed employer sources into one canonical record per posting for job seekers. Its job-data pipeline has three stages, and each service keeps its own database behind versioned contracts, so a new source adapter ships without a contract change in search.
+I started and own the two Go services of its three-stage job-data pipeline, and contribute core search, matching, and React features to the TypeScript search service.
 
 ```mermaid
 flowchart LR
   accTitle: SpotMyJob job-data pipeline
   accDescr: Employer sources flow into discovery, then processing, then search, which serves the seeker web app. Discovery and processing are Go services; search is a TypeScript service.
-  A[Employer sources] --> B[Discovery<br/>source governance, Go]
-  B --> C[Processing<br/>job transformation, Go]
-  C --> D[Search<br/>TypeScript service]
-  D --> E[Seeker web app, React]
+  A[Employer sources] --> B[Discovery, Go]
+  B --> C[Processing, Go]
+  C --> D[Search, TypeScript]
+  D --> E[Web app, React]
 ```
 
-I started and own the two Go services, discovery and processing. I am a core contributor to the TypeScript search service and the React web app, across ingestion, location, skills, ranking, and search.
+- **64%** higher throughput with no new infrastructure: I re-sized a stage on measured database load, and peak database CPU fell from 99.7% to 65%.
+- **88%** fewer requests per job-board sweep: I proved, field by field, that a list endpoint already returned the data per-item calls fetched; ETag revalidation now answers 83% of board reads with 304.
+- **17x** faster vector ingestion on QA: a half-precision HNSW index kept 98.2% recall@10, so the full-precision one could go.
+- **728 → 68 ms** p50 ranked matching over every eligible job, on a local copy of QA data.
 
-- **64%** higher transformation throughput with no new infrastructure. I re-sized the worker count on measured load instead of an assumed CPU count, and peak database CPU fell from **99.7%** to **65%** as throughput rose, which showed the stage had been waiting on round trips, not the database.
-- **88%** fewer requests per job-board sweep. The vendor documents some fields only on its per-item endpoint; I measured the list endpoint returning the same data, compared the two field by field, and dropped the per-item calls, keeping them as an automatic fallback. With ETag revalidation, **83%** of board reads now come back 304 Not Modified.
-- **17x** faster vector feed ingestion, from about 238 to 13.7 seconds per page on QA. I moved HNSW to a half-precision index (**98.2%** recall@10 against **98.3%**), then dropped the full-precision index every write still maintained.
-- **About 40%** fewer reads per run on a job-board family that issues no ETags: boards serving a job are read every run and empty ones rotate every two days, which also removed a third-party feed dependency.
-- Ranked matching went from **728 ms** to **68 ms** p50 at its September 2026 release, scoring every eligible job instead of the top 200, measured on a local copy of QA data.
-- A postal reference load projected at **30.2 minutes** finished in **2 minutes 34 seconds** with PostgreSQL `COPY` and one set-based merge.
+### Healthcare document intelligence (client project, 2026)
 
-<details>
-<summary>SpotMyJob design notes</summary>
+Two Go services for a client's healthcare platform: document ingestion and LLM extraction on AWS Step Functions.
 
-- Matching is one keyset-paged SQL score over every job that passes the seeker's pick and filters. Keyword search reads a GIN-indexed whole-word column with catalog-aware matching instead of a `LIKE` scan of every row.
-- The feed is replay-safe: durable cursors, idempotent upserts, tombstones, and, per source family, a complete-set reconciliation that removes jobs missing from the producer's served set. I rewrote that cleanup as a hash anti-join after measuring a latent 175-second generic-plan path; under the same forced plan it ran in 162 ms.
-- Job and seeker text share one versioned vector space in pgvector. I built the embedding client: dimensions checked on every response, and jittered retries on transient errors only.
-- The discovery service validates every address at dial time across IPv4, IPv6, and NAT64, which closes SSRF and DNS rebinding, and it caps response size, paces requests, and isolates a failing source family. The processing service contacts only allowlisted ATS origins, with redirects held to that list and the same per-host pacing.
-- AWS delivery is ECS, RDS PostgreSQL, S3, EventBridge Scheduler, SQS with dead-letter queues, Service Connect, CloudWatch, Terraform, Docker, and GitHub Actions with OIDC. The Go services' Actions references are pinned to commit SHAs, with a CI guard that keeps them pinned.
-- On the React side: "Did you mean" search that suggests and never auto-applies, draft-then-apply filters, onboarding gated on the answers a match needs, match-score display, and a location picker, each shipped with its Fastify API.
-
-</details>
-
-### Healthcare document intelligence (client project)
-
-From April to June 2026 I built two Go services for a client's healthcare platform: document ingestion, and a clinical document intelligence service that classified prescriptions and laboratory reports and extracted structured fields, with schema validation for lab reports. Both ran in a development environment.
-
-- Before the first Go commit, I compared LLM providers on the same documents for cost, latency, and output, replaced an OCR-then-LLM design with a single call that classifies and extracts, and chose the event, workflow, and runtime design against official AWS and vendor documentation.
-- Uploads went straight to S3, were malware-scanned in quarantine and promoted only when clean, and were normalized before EventBridge and SQS handed them to extraction.
-- Extraction ran as a Step Functions workflow over page chunks. I built Gemini API, Vertex AI, Azure OpenAI, and Amazon Bedrock adapters behind one provider-neutral gate that checked structure, schema, and a confidence bar, and flagged uncertain documents for human review.
-- A multi-page lab report went from malware-cleared file to structured result in **62 s**, with a **0.2 s** handoff between services; the extraction workflow's p50 was **10.6 s** over nine development runs.
-- Both services deployed independently through versioned events, idempotent requests, an event outbox in the extraction service, SQS dead-letter queues, and stale-job reconcilers, on PostgreSQL, Terraform, Docker, and GitHub Actions.
-
-### Internship
-
-Reusable React and TypeScript components with lazy loading and code splitting, shipped across the UI-to-API layer, plus **15+** frontend and backend production fixes traced with Chrome DevTools and server logs.
-
-## Personal projects
-
-**[ResumeCanvas](https://resumecanvas.vercel.app/)**, an AI resume builder you can click through. Next.js 16, React 19, TypeScript, MongoDB, and Puppeteer. AI features on Groq's Llama 3.3 70B cover resume review, keyword analysis, bullet and cover-letter generation, interview questions, and job matching, alongside 5 templates, PDF export, and public sharing. MongoDB has compound indexes on the per-user read paths, and **118** unit and performance tests reach **81.6%** line coverage of the modules under test. [ResumeCanvas source code](https://github.com/swarajreddy10/Resume_Canvas).
-
-**[Portfolio site](https://swarajreddy10.github.io/)**, built with Next.js 16 and React 19. On a local production build in October 2026, Lighthouse scored 100 on accessibility, best practices, and SEO, with performance at 99 on desktop and 84 on mobile, and axe-core reported zero automated violations. [Portfolio source code](https://github.com/swarajreddy10/swarajreddy10.github.io).
-
-## Writing
-
-- [Why Enterprise AI Is Moving From Chat Interfaces to Workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6), June 2026
-- [Why JavaScript Runtimes Are Being Rethought: From Node.js to Bun](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7), January 2026
+- Before the first Go commit, compared LLM providers on the same documents and replaced an OCR-then-LLM design with a single extraction call.
+- Built Gemini API, Vertex AI, Azure OpenAI, and Amazon Bedrock adapters behind one validation gate that flagged uncertain documents for human review.
+- In development, a multi-page lab report went from malware-cleared file to structured result in **62 s**.
 
 ## How I work
 
-- **Research before code, from day one.** SpotMyJob's job-source pipeline started with my research: feasibility, competitor, and data-rights studies consolidated into a proposal covering connector economics, source rights, and operating compliance, which the first Go service then implemented. My decision records cite official documentation with the date it was checked, separates confirmed facts from inference, and names the trigger that must fire before a component is built.
-- **Options measured on the real workload.** A second job-board family was added only after I compared its published fields with the first on live postings and sized it on a reproducible sample. Skill extraction was chosen over alternatives that included an LLM per job and embeddings, on a benchmark; on QA the share of jobs carrying a skill went from 25.7% to 80.8%.
-- **Data overrules the model.** An LLM judge piloted on a held-out labelled set, with rater agreement measured, missed the bar set before the run, so the rules-based path stayed.
-- **Fix the cause, keep failures visible.** A feed release that regresses against the last one is refused instead of published, and failed runs raise CloudWatch alarms rather than passing silently. The same habit covers APIs, workers, queues, databases, and the AWS path, using logs, query plans, CloudWatch, and execution history.
-- **AI-assisted, human-decided.** I use Claude Code, Codex, and Cursor across research, implementation, debugging, and review, and set up Claude Code for both Go services with project rules and hooks that block a commit until its checks pass. A change merges on the primary documentation, the tests, the benchmark, and peer review; after deploy, I check what CloudWatch recorded.
+- **Research before code.** My decision records cite official documentation with the date checked and separates confirmed facts from inference; SpotMyJob's job-source pipeline began with my sourcing research.
+- **Data over the model.** An LLM judge that missed the bar set before its run did not ship; the rules stayed.
+- **AI-assisted, human-decided.** Claude Code project rules and hooks in both Go services block a commit until its checks pass.
 
-## Technical skills
+## Projects and writing
+
+- **[ResumeCanvas](https://resumecanvas.vercel.app/)**: AI resume builder on Next.js 16 and Groq's Llama 3.3 70B, with 5 templates and PDF export; 118 tests at 81.6% line coverage. [ResumeCanvas source](https://github.com/swarajreddy10/Resume_Canvas)
+- **[This portfolio](https://swarajreddy10.github.io/)**: Lighthouse 100 for accessibility, best practices, and SEO. [Portfolio source](https://github.com/swarajreddy10/swarajreddy10.github.io)
+- **Medium:** [Why Enterprise AI Is Moving From Chat Interfaces to Workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6) · [Why JavaScript Runtimes Are Being Rethought](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
+
+## Skills
 
 <div align="center">
 
@@ -97,17 +66,8 @@ Reusable React and TypeScript components with lazy loading and code splitting, s
 
 </div>
 
-- **Languages:** Go (Golang), TypeScript, SQL, Python
-- **Backend and data:** microservices, REST APIs, event-driven architecture, Node.js with Fastify, PostgreSQL, pgvector, MongoDB
-- **AI engineering:** LLM integration (Vertex AI, Azure OpenAI, Amazon Bedrock), Claude Code, Codex, Cursor
-- **Cloud and delivery:** AWS (ECS, RDS, S3, EventBridge, SQS, Step Functions, CloudWatch), Terraform, Docker, GitHub Actions
-- **Frontend:** React, Next.js, TanStack Query, React Router, Tailwind CSS, Vite
-- **Testing:** unit, integration, and contract tests; Go race tests; Vitest with Testing Library
+Go (Golang) · TypeScript · SQL · Python · Microservices · REST APIs · Event-driven architecture · Node.js · PostgreSQL · pgvector · MongoDB · AWS (ECS, SQS, EventBridge, Step Functions, CloudWatch) · Terraform · Docker · GitHub Actions · LLM integration · React · Next.js
 
-## Education and certifications
+## Education
 
-**GITAM University**, B.Tech in Computer Science, Aug 2021 to Jun 2025, CGPA 8.2/10.
-
-- [IBM Full Stack Software Developer](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url), Coursera, Jan 2025
-- [AWS Academy Graduate: Cloud Architecting](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url), AWS Academy, May to Jun 2024
-- [MongoDB Python Developer Path](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf), MongoDB University, Nov 2025
+**GITAM University**, B.Tech in Computer Science, 2021 to 2025, CGPA 8.2/10 · [IBM Full Stack Software Developer](https://www.credly.com/badges/e83c9a88-fb50-4984-a905-68217cc76d9f/public_url) · [AWS Academy Graduate: Cloud Architecting](https://www.credly.com/badges/43e4a6d2-618f-4003-8a97-f6a773be09d5/public_url) · [MongoDB Python Developer Path](https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/2fef1e9a-2ef7-45ea-bdf7-9fde67df65a8-swaraj-chandra-reddy-m-2b64be3a-1a61-4210-9354-4051d4ad0677-certificate.pdf)
