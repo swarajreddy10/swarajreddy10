@@ -51,7 +51,7 @@ Two Go services for a client's healthcare platform: document ingestion and LLM e
 
 ## Projects and writing
 
-- **[ResumeCanvas](https://resumecanvas.vercel.app/)**: AI resume builder on Next.js 16 and Groq's Llama 3.3 70B, with 5 templates and PDF export; an indexed resume list reads 25 documents instead of 50,000 in a local benchmark, and 115 passing tests reach 80.3% line coverage. [ResumeCanvas source](https://github.com/swarajreddy10/Resume_Canvas)
+- **[ResumeCanvas](https://resumecanvas.vercel.app/)**: AI resume builder on Next.js 16 and Groq's Llama 3.3 70B, with 5 templates and PDF export; an indexed resume list reads 25 documents instead of 50,000 in a local benchmark (1 ms vs 30 ms p50), and dependency advisories fell from 92 to 6, none critical. [ResumeCanvas source](https://github.com/swarajreddy10/Resume_Canvas)
 - **[This portfolio](https://swarajreddy10.github.io/)**: Lighthouse 100 for accessibility, best practices, and SEO, and 96 for mobile performance. [Portfolio source](https://github.com/swarajreddy10/swarajreddy10.github.io)
 - **Medium:** [Why Enterprise AI Is Moving From Chat Interfaces to Workspaces](https://medium.com/dexaminds/why-enterprise-ai-is-moving-from-chat-interfaces-to-workspaces-a681c8556fa6) · [Why JavaScript Runtimes Are Being Rethought](https://medium.com/dexaminds/why-javascript-runtimes-are-being-rethought-from-node-js-to-bun-1d2f6bdcc9f7)
 
