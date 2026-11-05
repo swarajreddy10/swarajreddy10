@@ -1,0 +1,15 @@
+// markdownlint-cli2 configuration for the profile README (rule docs:
+// https://github.com/DavidAnson/markdownlint/tree/main/doc).
+{
+  "globs": ["README.md"],
+  "config": {
+    "default": true,
+    // Prose is soft-wrapped; GitHub renders it the same either way.
+    "MD013": false,
+    // GitHub's profile page needs HTML to centre the header and to switch the skill icons
+    // with the colour scheme (<picture> with a prefers-color-scheme <source>).
+    "MD033": { "allowed_elements": ["div", "picture", "source", "img"] },
+    // The first line is the centring <div>; the page's heading is the H1 inside it.
+    "MD041": false
+  }
+}

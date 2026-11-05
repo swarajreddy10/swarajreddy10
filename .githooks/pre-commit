@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Refuses a commit when a figure in README.md is missing from the career toolkit's master
+# facts. Enable with: git config core.hooksPath .githooks
+# The toolkit checkout is named by `git config career.toolkit`; without it the check fails.
+set -euo pipefail
+toolkit=$(git config --get career.toolkit || true)
+if [[ -z "$toolkit" || ! -d "$toolkit" ]]; then
+  echo "pre-commit: set \`git config career.toolkit <path to the career-toolkit checkout>\`." >&2
+  exit 1
+fi
+python -I "$toolkit/scripts/check-public-claims.py" --profile "$(git rev-parse --show-toplevel)" >&2
