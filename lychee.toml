@@ -1,0 +1,11 @@
+# lychee link-checker configuration (https://lychee.cli.rs/), read from the repository root.
+# Medium answers GitHub's runners with 403 for every page (2026-11-05: the profile and both
+# articles in this README's CI), while the same lychee got 200 for all three from a home
+# connection that day. lychee has no per-host accepted status, so Medium is left out here;
+# check its links from a local run, where they answer 200:
+#   lychee --no-progress --config /dev/null --include '^https://medium\.com/' README.md
+# The career toolkit's lychee.toml has the same rule.
+exclude = ['^https://medium\.com/']
+max_concurrency = 8
+timeout = 30
+max_retries = 2
