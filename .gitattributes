@@ -1,10 +1,10 @@
-# Text files stay LF in the repo and in the working tree, as in the career toolkit.
-# This overrides core.autocrlf, so Windows Git cannot turn the hook's LF into CRLF.
+# Text files stay LF in the repo and in the working tree.
+# This overrides core.autocrlf, so Windows Git does not rewrite LF as CRLF.
 * text=auto eol=lf
 
 *.pdf binary
 *.png binary
 *.jpg binary
 *.jpeg binary
-*.ico binary
-*.svg text eol=lf
+*.gif binary
+*.webp binary

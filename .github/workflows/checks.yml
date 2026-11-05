@@ -1,4 +1,4 @@
-# Markdown style and links on every push and pull request. The claim check needs the private
+# Markdown style and links on every push to main and every pull request. The claim check needs the private
 # career toolkit, so it runs there (daily, on a checkout of this repository) and in this
 # repository's pre-commit hook. Actions are pinned to full commit SHAs.
 name: Checks
