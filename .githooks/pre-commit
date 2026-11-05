@@ -1,26 +1,15 @@
 #!/usr/bin/env bash
-# Refuses a commit when a figure in README.md is missing from the career toolkit's master
-# facts. Enable with: git config core.hooksPath .githooks
-# The toolkit checkout is named by `git config career.toolkit`; without it the check fails.
+# Refuses a commit when a figure in the staged README.md is missing from the career toolkit's
+# master facts. The toolkit's scripts/check-staged.sh runs the check on the staged files, so
+# an unstaged edit cannot change the verdict. Enable with: git config core.hooksPath .githooks
 set -euo pipefail
-root=$(git rev-parse --show-toplevel)
-cd "$root"
 toolkit=$(git config --get --type=path career.toolkit || true)
-if [[ -z "$toolkit" || ! -d "$toolkit" ]]; then
+if [[ -z "$toolkit" ]]; then
   echo "pre-commit: set \`git config career.toolkit <path to the career-toolkit checkout>\`." >&2
   exit 1
 fi
-# The check reads the working tree, so it judges the commit only when README.md is exactly
-# what is staged.
-if ! git diff --quiet -- README.md; then
-  echo "pre-commit: README.md has unstaged changes; stage them or set them aside, then commit." >&2
+if [[ ! -f "$toolkit/scripts/check-staged.sh" ]]; then
+  echo "pre-commit: $toolkit has no scripts/check-staged.sh; point career.toolkit at an up-to-date toolkit checkout." >&2
   exit 1
 fi
-# The first interpreter that runs and is Python 3.10 or later; "python3" is the usual name on
-# Linux and macOS, "python" on Windows.
-py=""
-for c in python3 python; do
-  if "$c" -c 'import sys; sys.exit(sys.version_info < (3, 10))' 2>/dev/null; then py=$c; break; fi
-done
-[[ -n "$py" ]] || { echo "pre-commit: no python3 or python of version 3.10 or later on PATH." >&2; exit 1; }
-"$py" -I "$toolkit/scripts/check-public-claims.py" --surface profile --profile "$root" >&2
+bash "$toolkit/scripts/check-staged.sh" profile
